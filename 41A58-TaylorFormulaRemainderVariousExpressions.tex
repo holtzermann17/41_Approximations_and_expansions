@@ -1,0 +1,174 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{TaylorFormulaRemainderVariousExpressions}
+\pmcreated{2013-03-22 15:53:57}
+\pmmodified{2013-03-22 15:53:57}
+\pmowner{gufotta}{12050}
+\pmmodifier{gufotta}{12050}
+\pmtitle{Taylor formula remainder: various expressions}
+\pmrecord{19}{37902}
+\pmprivacy{1}
+\pmauthor{gufotta}{12050}
+\pmtype{Result}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A58}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Let $f:\mathbb{R}\rightarrow \mathbb{R}$ be an $n+1$ times differentiable function, and let $%
+T_{n,a}(x)$ its $n^{th\text{ }}$-degree Taylor polynomial;
+
+Then the following expressions for the remainder $R_{n,a}(x)=f(x)-T_{n,a}(x)$
+hold:
+
+1) $$R_{n,a}(x)=\frac{1}{n!}\int_{a}^{x}f^{(n+1)}(t)(x-t)^{n}dt$$ (Integral
+form)
+
+2) $$R_{n,a}(x)=\frac{f^{(n+1)}(\eta )}{n!p}(x-\eta)^{n-p+1}(x-a)^{p}$$ for a $\eta (x)\in (a,x)$ and $\forall p>0$ (Schl\"omilch form)
+
+3) $$R_{n,a}(x)=\frac{f^{(n+1)}(\xi )}{n!}(x-\xi )^{n}(x-a)$$ for a $\xi
+(x)\in (a,x)$ \ (Cauchy form)
+
+4) $$R_{n,a}(x)=\frac{f^{(n+1)}(\vartheta )}{(n+1)!}(x-a)^{n+1}$$ for a $%
+\vartheta (x)\in (a,x)$ \ (Lagrange form)
+
+Moreover the following result holds for the integral of the remainder from
+the center point \ $a$ to an arbitrary point $b$: 
+
+5) $$\int_{a}^{b}R_{n,a}(x)dx=\int_{a}^{b}\frac{f^{(n+1)}(x)}{(n+1)!}%
+(b-x)^{n+1}dx$$
+
+Proof:
+
+1) Let's proceed by induction.
+
+$n=0.$ $\int_{a}^{x}f^{^{\prime }}(t)dt=f(x)-f(a)=R_{0,a}(x)$, since $%
+T_{0,a}(x)=$ $f(a)$.
+
+Let's take it for true that $R_{n-1,a}(x)=\frac{1}{(n-1)!}%
+\int_{a}^{x}f^{(n)}(t)(x-t)^{n-1}dt$,
+and let's compute $\int_{a}^{x}\frac{f^{(n+1)}(t)}{n!}(x-t)^{n}dt$ by parts.
+\begin{eqnarray*}
+&&\int_{a}^{x}\frac{f^{(n+1)}(t)}{n!}(x-t)^{n}dt= \\
+&=&\frac{f^{(n)}(t)}{n!}(x-t)^{n}|_{a}^{x}+\int_{x}^{a}\frac{f^{(n)}(t)}{n!}%
+n(x-t)^{n-1}dt \\
+&=&-\frac{f^{(n)}(a)}{n!}(x-a)^{n}+\int_{x}^{a}\frac{f^{(n)}(t)}{(n-1)!}%
+(x-t)^{n-1}dt \\
+&=&R_{n-1,a}(x)-\frac{f^{(n)}(a)}{n!}(x-a)^{n} \\
+&=&f(x)-T_{n-1,a}-\frac{f^{(n)}(a)}{n!}(x-a)^{n} \\
+&=&f(x)-T_{n,a}(x)=R_{n,a}(x).
+\end{eqnarray*}
+
+2) Let's write the remainder in the integral form this way:
+
+\[
+R_{n,a}(x)=\frac{1}{n!}\int_{a}^{x}f^{(n+1)}(t)(x-t)^{n}dt=\frac{1}{n!}%
+\int_{a}^{x}f^{(n+1)}(t)(x-t)^{n-p+1}(x-t)^{p-1}dt
+\]
+
+Now, since $(x-t)^{p-1}$ doesn't change sign between $a$ and $x$,
+we can apply the \PMlinkname{integral Mean Value theorem}{IntegralMeanValueTheorem}. So a point $\eta (x)\in
+(a,x)$ exists such that
+\begin{eqnarray*}
+&&R_{n,a}(x)=\frac{1}{n!}\int_{a}^{x}f^{(n+1)}(t)(x-t)^{n-p+1}(x-t)^{p-1}dt
+\\
+&=&\frac{f^{(n+1)}(\eta )}{n!}(x-\eta )^{n-p+1}\int_{a}^{x}(x-t)^{p-1}dt \\
+&=&\frac{f^{(n+1)}(\eta )}{n!p}(x-\eta )^{n-p+1}(x-a)^{p}
+\end{eqnarray*}
+
+(Note that the condition $p>0$ is needed to ensure convergence of the
+integral)
+
+3) and 4) are obtained from Schl\"omilch form by plugging in $p=1$ and $p=n+1$
+respectively.
+
+5) Let's start from the right-end side:
+
+\begin{eqnarray*}
+&&\int_{a}^{b}\frac{f^{(n+1)}(x)}{(n+1)!}(b-x)^{n+1}dx= \\
+&=&\frac{f^{(n)}(x)}{(n+1)!}(b-x)^{n+1}|_{a}^{b}+\int_{a}^{b}\frac{f^{(n)}(x)%
+}{(n+1)!}(n+1)(b-x)^{n}dx \\
+&=&-\frac{f^{(n)}(a)}{(n+1)!}(b-a)^{n+1}+\int_{a}^{b}\frac{f^{(n)}(x)}{n!}%
+(b-x)^{n}dx \\
+&=&...=-\sum_{k=0}^{n}\frac{f^{(k)}(a)}{(k+1)!}(b-a)^{k+1}+\int_{a}^{b}f(x)dx
+\\
+&=&-\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}\int_{a}^{b}(x-a)^{k}dx+%
+\int_{a}^{b}f(x)dx \\
+&=&\int_{a}^{b}\left( -\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}%
+(x-a)^{k}+f(x)\right) dx=\int_{a}^{b}R_{n,a}(x)dx.
+\end{eqnarray*}
+
+Note:
+
+1) The proof of the integral form could also be stated as follow:
+
+Let 
+
+$\phi (t)=\sum_{k=0}^{n}\frac{f^{(k)}(t)}{k!}(x-t)^{k}$
+
+Then $\phi (x)=f(x)$ and\ $\phi (a)=T_{n,a}(x)$, so that $R_{n,a}(x)=\phi
+(x)-\phi (a)=\int_{a}^{x}\phi ^{\prime }(t)dt.$
+
+Let's now compute $\phi ^{\prime }(t).$
+
+\begin{eqnarray*}
+&&\phi ^{\prime }(t)=\sum_{k=0}^{n}\frac{1}{k!}\left[
+f^{(k+1)}(t)(x-t)^{k}-f^{(k)}(t)k(x-t)^{k-1}\right] \\
+&=&\sum_{k=0}^{n}\frac{f^{(k+1)}(t)}{k!}(x-t)^{k}-\sum_{k=1}^{n}\frac{%
+f^{(k)}(t)}{(k-1)!}(x-t)^{k-1} \\
+&=&\sum_{k=0}^{n}\frac{f^{(k+1)}(t)}{k!}(x-t)^{k}-\sum_{k=0}^{n-1}\frac{%
+f^{(k+1)}(t)}{k!}(x-t)^{k} \\
+&=&\frac{f^{(n+1)}(t)}{n!}(x-t)^{n}.
+\end{eqnarray*}
+
+2) From the integral form of the remainder it is possible to obtain the
+entire Taylor formula; indeed, repeatly integrating by parts, one gets:
+
+\begin{eqnarray*}
+&&\int_{a}^{x}\frac{f^{(n+1)}(t)}{n!}(x-t)^{n}dt=\frac{f^{(n)}(t)}{n!}%
+(x-t)^{n}|_{a}^{x}+\int_{a}^{x}\frac{f^{(n)}(t)}{n!}n(x-t)^{n-1}dt \\
+&=&-\frac{f^{(n)}(a)}{n!}(x-a)^{n}+\int_{a}^{x}\frac{f^{(n)}(t)}{(n-1)!}%
+(x-t)^{n-1}dt \\
+&=&-\frac{f^{(n)}(a)}{n!}(x-a)^{n}-\frac{f^{(n-1)}(a)}{(n-1)!}%
+(x-a)^{n-1}+\int_{a}^{x}\frac{f^{(n-1)}(t)}{(n-2)!}(x-t)^{n-2}dt \\
+&=&...=-\frac{f^{(n)}(a)}{n!}(x-a)^{n}-\frac{f^{(n-1)}(a)}{(n-1)!}%
+(x-a)^{n-1}-...-\frac{f^{(n-k+1)}(a)}{(n-k+1)!}(x-a)^{n-k+1}+\int_{a}^{x}%
+\frac{f^{(n-k+1)}(t)}{(n-k)!}(x-t)^{n-k}dt \\
+&&... \\
+&=&-\sum_{k=1}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^{k}+\int_{a}^{x}f^{\prime }(t)dt
+\\
+&=&-\sum_{k=1}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^{k}+f(x)-f(a) \\
+&=&-\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^{k}+f(x).
+\end{eqnarray*}
+
+that is
+
+\begin{eqnarray*}
+f(x) &=&\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^{k}+\int_{a}^{x}\frac{%
+f^{(n+1)}(t)}{n!}(x-t)^{n}dt \\
+&=&\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^{k}+R_{n,a}(x).
+\end{eqnarray*}
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ProofOfWeierstrassApproximationTheoremInRn}
+\pmcreated{2013-03-22 15:40:03}
+\pmmodified{2013-03-22 15:40:03}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{proof of Weierstrass approximation theorem in R^n}
+\pmrecord{8}{37603}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Proof}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A10}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+To show that the Weierstrass Approximaton Theorem holds in
+$\mathbb{R}^n$, we will use induction on $n$.
+
+For the sake of simplicity, consider first the case of the cubical
+region $0 \le x_i \le 1$, $1 \le i \le n$.  Suppose that $f$ is a
+continuous, real valued function on this region.  Let $\epsilon$ be an
+arbitrary positive constant.
+
+Since a continuous functions on compact regions are uniformly
+continuous, $f$ is uniformly continuous.  Hence, there exists an
+integer $N > 0$ such that $|f(a) - f(b)| < \epsilon/2$ whenever $|a -
+b| \le 1/N$ and both $a$ and $b$ lie in the cubical region.
+
+Define $\phi \colon \mathbb{R} \to \mathbb{R}$ as follows: 
+\[ \phi (x) = \left\{ \begin{matrix} 0 & x < -1 \cr 1 + x & -1
+\le x \le 0 \cr 1 - x & 0 \le x \le 1 \cr 0 & x > 1\end{matrix}
+\right. \]
+Consider the function ${\tilde f}$ defined as follows: 
+\[ {\tilde f} (x_1, \ldots x_n) = \sum_{m = 0}^N \phi(N x_1 + m)
+f(m/N, x_2, \ldots x_n) \]
+
+We shall now show that $|f(x_1, \ldots, x_n) - {\tilde f}(x_1, \ldots,
+x_n)| \le \epsilon/2$ whenever $(x_1, \ldots, x_n)$ lies in the
+cubical region.  By way that $\phi$ was defined, only two of the terms
+in the sum defining ${\tilde f}$ will differ from zero for any
+particular value of $x_1$, and hence 
+\[ {\tilde f} (x_1, \ldots, x_n) = (Nx - \lfloor Nx \rfloor) f \left(
+{\lfloor N x_1 \rfloor \over N}, x_2, \ldots, x_n \right) + (\lfloor
+Nx \rfloor + 1 - x) f \left( {\lfloor N x_1 \rfloor + 1 \over N}, x_2,
+\ldots, x_n \right), \]
+so
+\begin{eqnarray*}
+| {\tilde f} (x_1, \ldots, x_n) - f (x_1, \ldots, x_n) | &=&
+| {\tilde f} (x_1, \ldots, x_n) - \{ (Nx - \lfloor Nx \rfloor) + 
+(\lfloor Nx \rfloor + 1 - x)\} f (x_1, \ldots, x_n) | \cr
+&\le& (Nx - \lfloor Nx \rfloor) | f \left( {\lfloor N x_1 \rfloor \over
+N}, x_2, \ldots, x_n \right) -  f (x_1, X_2 \ldots, x_n) | +
+(\lfloor Nx \rfloor + 1 - x) |\left( {\lfloor N x_1 \rfloor + 1 \over N}, x_2,
+\ldots, x_n \right) -  f (x_1, x_2 \ldots, x_n) | \cr
+&\le& (Nx - \lfloor Nx \rfloor) {\epsilon \over 2} + 
+(\lfloor Nx \rfloor + 1 - x) {\epsilon \over 2} = {\epsilon \over 2}.
+\end{eqnarray*}
+
+Next, we will use the Weierstrass approximation theorem in $n-1$
+dimensions and in one dimesnsion to approximate $\tilde f$ by a
+polynomial.  Since $f$ is continuous and the cubical region is
+compact, $f$ must be bounded on this region.  Let $M$ be an upper
+bound for the absolute value of $f$ on the cubical region.  Using the
+Weierstrass approximation theorem in one dimension, we conclude that
+there exists a polynoial $\breve \phi$ such that $| \breve \phi (a) -
+\phi (a) | < \epsilon / (4MN)$ for all $a$ in the region.  Using the
+Weierstrass approximation theorem in $n-1$ dimensions, we conclude
+that there exist polynomials $p_m$, $0 \le m \le N$ such that $|p_m
+(x_2, \ldots, x_n) - f (m/N, x_2,\ldots x_n) | \le {\epsilon \over
+4N}$. Then one has the following inequality:
+\begin{eqnarray*}
+| {\breve \phi} (N x_1 + m) p_m (x_2, \ldots x_n) -
+\phi (N x_1 + m) f(m/N, x_2, \ldots x_n) | &=
+| {\breve \phi} (N x_1 + m) p_m (x_2, \ldots x_n) -
+{\breve \phi} (N x_1 + m) f(m/N, x_2, \ldots x_n) \\
+&+&
+{\breve \phi} (N x_1 + m) f(m/N, x_2, \ldots x_n) -
+\phi (N x_1 + m) f(m/N, x_2, \ldots x_n) | \\
+&\le& |{\breve \phi} (N x_1 + m)|
+| p_m (x_2, \ldots x_n) -  f(m/N, x_2, \ldots x_n)| \\
+&+&
+| f(m/N, x_2, \ldots x_n)|
+| {\breve \phi} (N x_1 + m) - \phi (N x_1 + m)| \\
+&\le& 
+{\epsilon \over 4N} + M {\epsilon \over 4MN} = {\epsilon \over 2N} \\ 
+\end{eqnarray*}
+ Define 
+\[ {\breve f} (x_1, \ldots x_n) = \sum_{m = 0}^N {\breve \phi}
+(N x_1 + m) p_m (x_2, \ldots x_n). \]
+As a finite sum of products of polynomials, this is a polynomial.
+From the above inequality, we conclude that $|{\breve f} (a) -
+{\tilde f} (a)| \le \epsilon / 2$, hence $|f(a) - {\breve f} (a)| 
+\le \epsilon$.
+
+It is a simple matter of rescaling variables to conclude the
+Weirestrass approximation theorem for arbitrary parallelopipeds.  Any
+compact subset of $\mathbb{R}^n$ can be embedded in some paralleloped
+and any continuous function on the compact subset can be extended to a
+continuous function on the parallelopiped.  By approximating this
+extended function, we conclude the Weierstrass approximation theorem
+for arbitrary compact subsets of $\mathbb{R}^n$.
+%%%%%
+%%%%%
+\end{document}

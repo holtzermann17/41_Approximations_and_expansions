@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{MidpointRule}
+\pmcreated{2013-03-22 15:57:44}
+\pmmodified{2013-03-22 15:57:44}
+\pmowner{Wkbj79}{1863}
+\pmmodifier{Wkbj79}{1863}
+\pmtitle{midpoint rule}
+\pmrecord{16}{37976}
+\pmprivacy{1}
+\pmauthor{Wkbj79}{1863}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41-01}
+\pmclassification{msc}{28-00}
+\pmclassification{msc}{26A42}
+\pmrelated{LeftHandRule}
+\pmrelated{RightHandRule}
+\pmrelated{RiemannSum}
+\pmrelated{ExampleOfEstimatingARiemannIntegral}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\begin{document}
+The \emph{midpoint rule} for computing the Riemann integral $\displaystyle \int\limits_a^b f(x) \, dx$ is
+\[
+\int\limits_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{j=1}^n f \left( a + \left( j-\frac{1}{2} \right) \left( \frac{b-a}{n} \right) \right) \left( \frac{b-a}{n} \right).
+\]
+
+If the Riemann integral is considered as a measure of area under a curve, then the expressions $\displaystyle f \left( a + \left( j-\frac{1}{2} \right) \left( \frac{b-a}{n} \right) \right)$ \PMlinkescapetext{represent} the \PMlinkescapetext{heights} of the rectangles, and $\displaystyle \frac{b-a}{n}$ is the common \PMlinkescapetext{width} of the rectangles.
+
+The Riemann integral can be approximated by using a definite value for $n$ rather than taking a limit.  In this case, the partition is $\displaystyle \left\{ \left[ a, a+\frac{b-a}{n} \right) , \dots , \left[ a+\frac{(b-a)(n-1)}{n}, b \right] \right\}$, and the function is evaluated at the midpoints of each of these intervals.  Note that this is a special case of a Riemann sum in which the $x_j$'s are evenly spaced and the $c_j$'s chosen are the midpoints.
+
+If $f$ is Riemann integrable on $[a,b]$ such that $|f''(x)| \le M$ for every $x \in [a,b]$, then
+\[
+\left| \int\limits_a^b f(x) \, dx - \sum_{j=1}^n f \left( a + \left( j-\frac{1}{2} \right) \left( \frac{b-a}{n} \right) \right) \left( \frac{b-a}{n} \right) \right| \le \frac{M(b-a)^3}{24n^2}.
+\]
+%%%%%
+%%%%%
+\end{document}

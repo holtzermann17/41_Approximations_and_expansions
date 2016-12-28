@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ConverseToTaylorsTheorem}
+\pmcreated{2013-03-22 15:05:42}
+\pmmodified{2013-03-22 15:05:42}
+\pmowner{jirka}{4157}
+\pmmodifier{jirka}{4157}
+\pmtitle{converse to Taylor's theorem}
+\pmrecord{6}{36823}
+\pmprivacy{1}
+\pmauthor{jirka}{4157}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A58}
+\pmsynonym{Taylor's theorem converse}{ConverseToTaylorsTheorem}
+\pmrelated{TaylorSeries}
+\pmrelated{BorelLemma}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\theoremstyle{theorem}
+\newtheorem*{thm}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{conj}{Conjecture}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{example}{Example}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\begin{document}
+Let $U \subset {\mathbb{R}}^n$ be an open set.
+
+\begin{thm}
+Let $f \colon U \to {\mathbb{R}}$ be a function such that there exists a constant $C > 0$ and an integer $k \geq 0$ such that for each $x \in U$ there is a polynomial $p_x(y)$ of \PMlinkescapetext{degree} $k$ where
+\begin{equation*}
+\lvert f(x+y) - p_x(y) \rvert \leq C \lvert y \rvert^{k+1}
+\end{equation*}
+for $y$ near 0.  Then $f \in C^k(U)$ ($f$ is $k$ \PMlinkescapetext{times} continuously differentiable) and the \PMlinkname{Taylor expansion}{TaylorSeries} of \PMlinkescapetext{order} $k$ of $f$ about any $x \in U$ is given by $p_x$.
+\end{thm}
+
+Note that when $k=0$ the hypothesis of the theorem is just that $f$ is Lipschitz in $U$ which certainly makes it continuous in $U$.
+
+\begin{thebibliography}{9}
+\bibitem{Whitney:varieties}
+Steven G.\@ Krantz, Harold R.\@ Parks.
+{\em \PMlinkescapetext{A Primer of Real Analytic Functions}}.
+Birkh\"{a}user, Boston, 2002.
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ExampleOfTaylorPolynomialsForTheExponentialFunction}
+\pmcreated{2013-03-22 15:04:09}
+\pmmodified{2013-03-22 15:04:09}
+\pmowner{alozano}{2414}
+\pmmodifier{alozano}{2414}
+\pmtitle{example of Taylor polynomials for the exponential function}
+\pmrecord{6}{36790}
+\pmprivacy{1}
+\pmauthor{alozano}{2414}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A58}
+%\pmkeywords{approximations of e}
+\pmrelated{LogarithmFunction}
+\pmrelated{NaturalLogBase}
+\pmrelated{EIsTranscendental}
+\pmrelated{ExponentialFunction}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{exa}{Example}
+
+% Some sets
+\newcommand{\Nats}{\mathbb{N}}
+\newcommand{\Ints}{\mathbb{Z}}
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\Complex}{\mathbb{C}}
+\newcommand{\Rats}{\mathbb{Q}}
+\begin{document}
+\begin{exa}
+We construct the $n$th Taylor polynomial for $f(x)=e^x$ around $x=0$. As we know all derivatives of $e^x$ equal $e^x$ and also, $e^0=1$. Therefore, $f^{(n)}(0)=1$ for any $n$. Thus:
+\begin{eqnarray*}
+T_1(x) &=& 1+x\\
+T_2(x) &=& 1+x + \frac{x^2}{2}\\
+T_3(x) &=& 1+x + \frac{x^2}{2}+ \frac{x^3}{3!}=1+x + \frac{x^2}{2} +\frac{x^3}{6}\\
+T_4(x) &=& 1+x + \frac{x^2}{2}+ \frac{x^3}{3!}+ \frac{x^4}{4!}=1+x + \frac{x^2}{2}+ \frac{x^3}{6}+ \frac{x^4}{24}
+\end{eqnarray*}
+In fact:
+$$T_n(x)=1+x + \frac{x^2}{2}+ \frac{x^3}{3!}+ \frac{x^4}{4!}+\ldots+\frac{x^n}{n!}$$
+\begin{center}
+\includegraphics[scale=0.7]{expon}
+
+Comparison of $e^x$ with the Taylor pol. of deg. $1$ (green), $2$ (blue) and $3$ (pink).
+\end{center}
+Let us use several Taylor polynomials to find approximations of the number $e$:
+\begin{eqnarray*}
+e &=& 2.718281828459045\ldots\\
+e\approx T_1(1) &=& 1+1=2\\
+e \approx T_2(1) &=& 1+1+1/2=2.5 \\
+e \approx T_3(1) &=& 1+1+1/2+1/6=8/3=2.666\bar{6} \\
+e \approx T_4(1) &=& 1+1+1/2+1/6+1/24=65/24=2.708333\bar{3} \\
+e \approx T_5(1) &=& 1+1+1/2+1/6+1/24+1/120=163/60=2.71666\bar{6} \\
+\end{eqnarray*}
+\end{exa}
+%%%%%
+%%%%%
+\end{document}

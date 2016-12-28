@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{TrapezoidalRule}
+\pmcreated{2013-03-22 13:39:43}
+\pmmodified{2013-03-22 13:39:43}
+\pmowner{Wkbj79}{1863}
+\pmmodifier{Wkbj79}{1863}
+\pmtitle{trapezoidal rule}
+\pmrecord{25}{34318}
+\pmprivacy{1}
+\pmauthor{Wkbj79}{1863}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A55}
+\pmclassification{msc}{41A05}
+\pmsynonym{trapezoid rule}{TrapezoidalRule}
+\pmsynonym{trapezium rule}{TrapezoidalRule}
+\pmrelated{CompositeTrapezoidalRule}
+
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pstricks}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{graphpap}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\complexes}{\mathbb{C}}
+\newcommand{\quaternions}{\mathbb{H}}
+\newcommand{\note}{\underline{\textcolor{red}{NOTE}}:}
+\begin{document}
+\PMlinkescapeword{bases}
+\PMlinkescapeword{degree}
+\PMlinkescapeword{height}
+\PMlinkescapeword{proposition}
+
+The \emph{trapezoidal rule} is a method for approximating a definite integral by evaluating the integrand at two points.  The formal rule is given by
+\[
+\int_{a}^{b}f(x)\,dx\;\approx\;\frac{h}{2}\left[f(a)+f(b)\right]
+\]
+where $h=b-a$.
+
+This rule comes from determining the area of a right trapezoid with \PMlinkname{bases}{Base9} of lengths $f(a)$ and $f(b)$ respectively and a \PMlinkname{height}{Height6} of length $h$.  When using a graph to illustrate the trapezoidal rule, the height of the right trapezoid is actually horizontal and the bases are vertical.  This may be confusing to someone who is seeing the trapezoidal rule for the first time.  An example is shown below.
+
+\begin{center}
+\begin{pspicture}(-2,-1)(2,5)
+\psline{<->}(-2,0)(2,0)
+\psline{<->}(0,-0.5)(0,4)
+\parabola{<->}(2,4)(0,0)
+\pspolygon[linecolor=red](-1,0)(-1,1)(1.5,2.25)(1.5,0)
+\rput[b](2,-0.5){$x$}
+\rput[l](-0.4,4.3){$y$}
+\rput[r](-1,0.5){$f(a)$}
+\rput[l](1.5,1){$f(b)$}
+\rput[a](0.25,-0.3){$h$}
+\psdots(-1,1)(1.5,2.25)
+\rput[l](-2,0){.}
+\end{pspicture}
+\end{center}
+
+The figure in red need not be a right trapezoid.  If either $f(a)=0$ or $f(b)=0$, the figure will be a right triangle.  If both $f(a)=0$ and $f(b)=0$, the figure will be a line segment.  In any case, the same rule for approximating the corresponding definite integral is used.
+
+The trapezoidal rule is the first Newton-Cotes quadrature formula.  It has degree of precision 1. This means it is exact for polynomials of \PMlinkname{degree}{Degree8} less than or equal to one. We can see this with a \PMlinkescapetext{simple} example.
+
+If $f$ is Riemann integrable on $[a,b]$ with $|f''(x)| \le M$ for all $x \in [a,b]$, then
+$$\left| \int_a^b f(x) \, dx - \frac{h}{2}\left[f(a)+f(b)\right]
+\right| \le \frac{M(b-a)^3}{12}.$$
+
+Following is an example of the trapezoidal rule.
+
+Using the fundamental theorem of calculus shows
+\[
+\int_{0}^{1}x\,dx =\frac{1}{2}.
+\]
+
+In this case, the trapezoidal rule gives the exact value,
+\[
+\int_{0}^{1}x\,dx \;\approx\;\frac{1}{2}[f(0)+f(1)]=\frac{1}{2}.
+\]
+
+It is important to note that most calculus books give the wrong definition of the trapezoidal rule.  Typically, they define it to be what is actually the composite trapezoidal rule, which uses the trapezoidal rule on a specified number of subintervals.  Some examples of calculus books that define the trapezoidal rule to be what is actually the composite trapezoidal rule are:
+
+\begin{itemize}
+\item Stewart, James.  \emph{Calculus.}  Pacific Groves, \PMlinkescapetext{CA}: International Thomson Publishing Co., 1995.
+\item Bittinger, Marvin L.  \emph{Calculus.}  Reading, \PMlinkescapetext{MA}: Addison-Wesley Publishing Co., 1989.
+\end{itemize}
+
+Also note the trapezoidal rule can be derived by integrating a linear interpolation or by using the
+method of undetermined coefficients.  The latter is probably a bit easier.
+%%%%%
+%%%%%
+\end{document}

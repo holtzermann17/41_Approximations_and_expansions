@@ -1,0 +1,198 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ApproximateNonlinearTransformationOfAffineCombination}
+\pmcreated{2013-03-22 16:50:35}
+\pmmodified{2013-03-22 16:50:35}
+\pmowner{stevecheng}{10074}
+\pmmodifier{stevecheng}{10074}
+\pmtitle{approximate non-linear transformation of affine combination}
+\pmrecord{7}{39088}
+\pmprivacy{1}
+\pmauthor{stevecheng}{10074}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A58}
+\pmclassification{msc}{51N20}
+%\pmkeywords{affine combination}
+
+% The standard font packages
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% For neatly defining theorems and definitions
+%\usepackage{amsthm}
+
+% Including EPS/PDF graphics (\includegraphics)
+\usepackage{graphicx}
+
+% Making matrix-based graphics
+%%%\usepackage{xypic}
+
+% Enumeration lists with different styles
+%\usepackage{enumerate}
+
+% Set up the theorem environments
+%\newtheorem{thm}{Theorem}
+%\newtheorem*{thm*}{Theorem}
+
+\providecommand{\defnterm}[1]{\emph{#1}}
+
+% The standard number systems
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\rat}{\mathbb{Q}}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\intset}{\mathbb{Z}}
+
+% Absolute values and norms
+% Normal, wide, and big versions of the delimeters
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\absW}[1]{\left\lvert#1\right\rvert}
+\providecommand{\absB}[1]{\Bigl\lvert#1\Bigr\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\normW}[1]{\left\lVert#1\right\rVert}
+\providecommand{\normB}[1]{\Bigl\lVert#1\Bigr\rVert}
+
+% Differentiation operators
+\providecommand{\od}[2]{\frac{d #1}{d #2}}
+\providecommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2}}
+\providecommand{\ipd}[2]{\partial #1 / \partial #2}
+
+% Differentials on integrals
+\newcommand{\dx}{\, dx}
+\newcommand{\dt}{\, dt}
+\newcommand{\dmu}{\, d\mu}
+
+% Inner products
+\providecommand{\ip}[2]{\langle {#1}, {#2} \rangle}
+
+% Calligraphic letters
+\newcommand{\sF}{\mathcal{F}}
+\newcommand{\sD}{\mathcal{D}}
+
+% Standard spaces
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Le}{\mathbf{L}}
+
+% Operators and functions occassionally used in my articles
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\linspan}{span}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\lindim}{dim}
+\DeclareMathOperator{\sinc}{sinc}
+
+% Probability stuff
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+
+\begin{document}
+\PMlinkescapeword{weights}
+\PMlinkescapeword{order}
+\PMlinkescapeword{formula}
+\PMlinkescapeword{term}
+\PMlinkescapeword{terms}
+\PMlinkescapeword{objects}
+
+
+Consider 
+applying an arbitrary transformation $f$ 
+to an affine combination $\sum_{i=1}^n w_i x_i$
+of some points $x_i$,
+with non-negative weights $w_i$ that sum to unity.
+Obviously, in general, 
+\[
+f \Bigl( \sum_{i=1}^n w_i x_i \Bigr) 
+\neq \sum_{i=1}^n w_i f(x_i)\,.
+\]
+However, sometimes it is desirable to compute the image
+$f(\sum_i w_i x_i)$
+as if $f$ were a linear (or affine) transformation; 
+the result is then hoped to be a good approximation
+to the true value.
+(See below for an application.)
+
+Actually, it is possible to show that, provided that $f$ is twice 
+continuously differentiable, the approximation is good to first order,
+despite the absence of any derivatives of $f$ in the formula.
+The domain and range of $f$ may be any normed vector spaces.
+
+First, we write:
+\begin{align*}
+f\Bigl( \sum_i w_i x_i \Bigr) 
+&= f\Bigl( \sum_i w_i (x_i - x_1) + x_1 \Bigr) \\
+&= f(x_1) + \sum_i w_i f'(x_1) (x_i - x_1) + O\Bigl( \normB{ \sum_i w_i (x_i - x_1)}^2 \Bigr)\,.
+\end{align*}
+
+If $h = \max_i \norm{x_i - x_1}$,
+then $\norm{ \sum_i w_i (x_i - x_1) } \leq \sum_i \abs{w_i} h = h$,
+and so the error term in the Taylor expansion
+can be simplified to $O(h^2)$.
+
+Substituting another Taylor expansion
+\begin{align*}
+f(x_i) - f(x_1) = f'(x_1) (x_i - x_1) + O(h^2)\,,
+\end{align*}
+into the first, we obtain:
+\begin{align*}
+f\Bigl( \sum_i w_i x_i \Bigr)
+&= f(x_1) + \sum_i w_i \Bigl( f(x_i) - f(x_1) + O(h^2) \Bigr) + O(h^2) \\
+&= \sum_i w_i f(x_i) + O(h^2)\,.
+\end{align*}
+
+Furthermore, it is not hard to see,
+by accounting the error from the Taylor expansions more carefully,
+that we have the bound:
+\[
+\normB{ f\Bigl( \sum_i w_i x_i \Bigr) - \sum_i w_i f(x_i) } \leq
+M h^2\,,
+\]
+where $M$ is the maximum,
+as $\xi$ ranges inside the convex hull
+formed by the points $x_i$,
+of the quantity $\norm{f''(\xi)} = 
+\sup\limits_{u \neq 0} \frac{\norm{f''(\xi)(u,u)}}{\norm{u}^2}$.
+Finally, the point $x_1$ over which we performed Taylor expansions
+can be replaced by any other point $x_k$,
+and so correspondingly $h$ can be replaced by $\min_k \max_i \norm{x_i - x_k}$.
+
+\subsection*{Application in computer graphics}
+
+The principle just derived is often applied in vector-based computer graphics
+when curved objects are drawn by cubic B\'ezier curves:
+\[
+\gamma(t) = \sum_{i=0}^3 w_i(t) \, x_i\,, \quad w_i(t) = \binom{3}{i} (1-t)^{n-i} t^i\,,
+\]
+which are affine combinations of the control points $x_i$.
+To compute and display a smooth transformation $f$ of such curves,
+it may be too much work to compute $f(\gamma(t))$ repeatedly
+for many parameter values $t$.
+Provided $\gamma$ is not too wavy,
+computing and displaying $\sum_{i=0}^3 w_i(t) \, f(x_i)$
+is vastly more efficient, and may result in little or 
+no visually perceptible difference.
+
+As a concrete example, consider bending a straight line segment
+into a circle.
+Mathematically, we are mapping the interval $[0,2\pi]$
+via $t \mapsto (r\cos t, r\sin t)$.
+If the interval is split into sub-segments,
+each considered as a 
+cubic B\'ezier curve with its interior control points
+both set at the midpoint of the line segment,
+then a circle can be approximated
+by transforming these control points.
+The following diagram shows the approximation for 24 segments (three B\'ezier
+curves per $45^\circ$ arc). 
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{circle.eps}
+\end{center}
+\caption{Circle drawn using approximate mapping of line segment}
+\end{figure}
+
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,275 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LectureNotesOnPolynomialInterpolation}
+\pmcreated{2013-03-22 16:51:59}
+\pmmodified{2013-03-22 16:51:59}
+\pmowner{rmilson}{146}
+\pmmodifier{rmilson}{146}
+\pmtitle{lecture notes on polynomial interpolation}
+\pmrecord{7}{39116}
+\pmprivacy{1}
+\pmauthor{rmilson}{146}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A05}
+\pmrelated{EvaluationHomomorphism}
+\pmrelated{LagrangeInterpolationFormula}
+\pmrelated{VanderMondeMatrix}
+\pmdefines{multi-evaluation mapping}
+\pmdefines{interpolation mapping}
+\pmdefines{polynomial interpolation}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}[proposition]{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{Definition}
+\newtheorem{remark}[proposition]{Remark}
+\newtheorem{example}[proposition]{Example}
+\newtheorem{problem}[proposition]{Problem}
+
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+
+
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\pol}{\operatorname{pol}}
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\orank}{\operatorname{rank}}
+
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\VM}{\mathsf{VM}}
+\newcommand{\VD}{\mathsf{V}}
+\newcommand{\Rset}{\mathbb{R}}
+
+
+\begin{document}
+\section{Summary of notation and terminonlogy}
+\begin{itemize}
+\item \emph{multi-evaluation mapping}: $\ev_{\bx}: \cP_m \to \Rset^n,\; 
+  \bx\in\Rset^n$.  Here $\cP_m$ is the vector space of polynomials of
+  degree $m$ or less. 
+\item \emph{interpolation mapping}: $\pol_{\bx}: \Rset^{n} \to
+  \cP_{n-1},\; \bx\in \Rset^{n}$ where $x_1,\ldots,x_{n}$ are
+  distinct;
+\item \emph{Vandermonde matrix and polynomial};
+\item \emph{overdetermined and underdetermined linear system;}
+\item \emph{overdetermined and underdetermined interpolation problem}
+\end{itemize}
+
+\section{The polynomial interpolation problem}
+\begin{definition}
+  Let $\bx\in \Rset^n$ be given.  Define $\ev_{\bx}:\cP_m\to
+  \Rset^n$, the multi-evaluation mapping, to be the linear
+  transformation given by
+  \[ \ev_{\bx} : p \to \bmat{p(x_1)\\ \vdots \\ p(x_n)},\quad
+  p\in \cP_m.\]
+\end{definition}
+
+\begin{problem}[Polynomial interpolation]
+Given $(x_1,y_1),\ldots, (x_n,y_n)\in \Rset^2$
+to find a polynomial $p\in \cP_m$ such that $p(x_i)=y_i,\;
+i=1,\ldots, n$.  Equivalently, given $\bx,\by\in \Rset^n$ to find the
+preimage $\ev_{\bx}^{-1}(\by)$.
+\end{problem}
+
+\begin{theorem}
+  Fix $\bx\in \Rset^{n}$.  The multi-evaluation mapping
+  $\ev_{\bx}:\cP_{n-1}\to \Rset^{n}$  is an isomorphism if and only
+  if the components $x_1,\ldots, x_n$ are distinct.
+\end{theorem}
+
+
+\section{Vandermonde matrix, polynomial, and determinant}
+\begin{definition}
+  For a given $\bx\in \Rset^{n}$, the following matrix
+  \[ \VM(\bx) = \VM(x_1,\ldots, x_{n}) = 
+  \bmat{
+    1 & x_1 & x_1^{2} &\ldots & x_1^{n-1} \\
+    1 & x_2 & x_2^{2} &\ldots &x_2^{n-1} \\
+    1 & x_{3} & x_{3}^{2} & \ldots & x_{3}^{n-1} \\
+    \vdots & \vdots & \vdots & \ddots  & \vdots \\
+    1 & x_{n} & x_{n}^{2} & \ldots & x_{n}^{n-1} }
+  \] 
+  is called
+  the \emph{Vandermonde matrix}.  The
+  expression,
+  \[ \VD(\bx) = \VD(x_1,\ldots, x_{n}) = \prod_{1\leq i< j\leq n}
+    (x_j-x_i)\] 
+    is called the Vandermonde  polynomial.  Note: we define $\VD(x_1)
+    =1$; the usual convention is that the empty product is equal to $1$.
+\end{definition}
+
+\begin{proposition}
+  The Vandermonde matrix is the transformation matrix of $\ev_{\bx}$ with the
+  monomial basis $[1,x,\ldots, x^n]$ as the input basis and the
+  standard basis $[\be_1,\ldots,\be_{n+1}]$ as the output basis.
+\end{proposition}
+
+\begin{theorem}
+  The Vandermonde polynomial gives the determinant of the Vandermonde
+  matrix:
+  \begin{equation}
+    \label{eq:vmid}
+    \left| \begin{matrix}
+        1 & x_1 & \ldots & x_1^{n-1} \\
+        1 & x_2 & \ldots &x_2^{n-1} \\
+        \vdots &  \vdots & \ddots  & \vdots \\
+        1 & x_{n}  & \ldots & x_{n}^{n-1} 
+      \end{matrix}
+    \right| = \prod_{1\leq i< j\leq n+1}
+    (x_j-x_i),    
+  \end{equation}
+    or more succinctly,
+    \[ \det \VM(\bx) = \VD(\bx).\]
+\end{theorem}
+\begin{proof}
+  We will prove formula \eqref{eq:vmid} by induction on $n$.  Note
+  that
+  \[ \VM(x_1) = \bmat{1},\quad \VD(x_1) = 1 .\] Evidently then, the
+  formula works for $n=1$. Next, suppose that we believe the formula
+  for a given $n$.  We show that the formula is valid for $n+1$. For
+  $x_1,\ldots, x_{n}\in \Rset$ and a variable $x$, and consider the
+  $n^{\text{th}}$ degree polynomial
+  \[ p(x)=\det \VM(x_1,\ldots, x_n,x) = \left| \begin{matrix}
+        1 & x_1 & \ldots & x_1^{n-1}& x_1^{n} \\
+        1 & x_2 & \ldots &x_2^{n-1}&x_2^{n} \\
+        \vdots & \vdots & \ddots  &\vdots& \vdots \\
+        1& x_n & \ldots & x_n^{n-1} & x_n^n\\
+        1 & x &  \ldots & x^{n-1}& x^n \end{matrix}
+    \right|\]
+    By the properties of determinants, $x_1,\ldots, x_n$ are roots of
+    $p(x)$.  Taking the cofactor expansion along the bottom row, we
+    see that the coefficient of $x^n$ is $\VD(x_1,\ldots, x_n)$.
+    Therefore,
+    \[ p(x) = \VD(x_1,\ldots, x_n) (x-x_1) \cdots (x-x_n) =
+    \VD(x_1,\ldots, x_n, x),\]
+    as was to be shown.
+\end{proof}
+\section{Lagrange interpolation formula}  Let
+$x_1,\ldots, x_n\in \Rset$ be distinct.  We know that
+$\ev_\bx:\cP_{n-1}\to\Rset^n$ is invertible.  Let
+$\pol_\bx:\Rset^n\to \cP_{n-1}$ denote the inverse.  In principle,
+this inverse is described by the inverse of the Vandermonde matrix.
+Is there another way to solve the interpolation problem?  For
+$i=1,\ldots, n$ let us define the polynomial
+\[ p_i(x) = \prod_{j\neq i} \frac{x-x_j}{x_i- x_j} .\] These $n-1$
+degree polynomials have been ``engineered'' so that $p_i(x_i) = 1$ and
+so that $p_i(x_j) = 0$ for $i\neq j$
+\begin{theorem}[Lagrange interpolation formula]
+  Let $x_1,\ldots, x_n\in \Rset$ be distinct.  Then,
+  \[ \pol_\bx(\by) = y_1 p_1 + \cdots + y_n p_n.\]  
+\end{theorem}
+
+
+\section{Underdetermined and overdetermined interpolation}
+\begin{definition}
+  Let $T:\cU\to \cV$ be a linear transformation of finite dimensional
+  vector spaces.  A linear problem is an equation of the form
+  \[ T(\bu) = \bv, \] where $\bv\in \cV$ is given, and $\bu\in \cU$ is
+  the unknown.  To be more precise, the problem is to determine
+  the preimage $T^{-1}(\bv)$ for a given $\bv\in \cV$.  We say that the
+  problem is overdetermined if $\dim\cV>\dim \cU$, i.e. if there
+  are more equations than unknowns.  The linear problem is said to be
+  underdetermined if $\dim\cV<\dim\cU$, i.e., if there are more
+  variables than equations.
+\end{definition}
+
+\begin{remark}
+By the rank-nullity theorem, an
+underdetermined linear problem will either be inconsistent, or will
+have multiple solutions.  Thus, an underdetermined system arises when
+$T$ is not one-to-one; i.e., the kernel $\ker(T)$ is non-trivial.  An
+overdetermined linear system is inconsistent, unless $\bv$ satisfies a
+number linear compatibility constraints, equations that describe the image
+$\img(T)$.  To put it another way, an overdetermined system arises
+when $T$ is not onto.
+\end{remark}
+
+\begin{definition} Let $x_1,\ldots, x_n\in \Rset$ be distinct and let
+  $\ev_\bx:\cP_m\to \Rset^n$ be the corresponding multi-evaluation
+  mapping.  Let $\by\in \Rset^n$ be given.  The linear equation
+  \[ \ev_{\bx}(p) = \by,\quad p \in \cP_m\]
+  is called an underdetermined interpolation problem if $m\geq n$.
+  If $m\leq n-2$, we call the above equation an overdetermined
+  interpolation problem.  Note that if $m=n-1$, the interpolation
+  problem is ``just right''; there is exactly one solution, namely the
+  polynomial
+  $\pol_\bx(\by)$ given by the Lagrange interpolation formula.
+\end{definition}
+\begin{proposition}[Underdetermined interpolation]
+  Let $x_1,\ldots, x_n\in \Rset$ be distinct.  Define
+  \[ q(x) = (x-x_1)\cdots (x-x_n)\]
+  to be the $n^{\text{th}}$ degree polynomial with the $x_i$ as its roots.
+  Suppose that $m\geq n$. Then,
+  the multi-evaluation mapping
+  $\ev_\bx:\cP_m\to \Rset^n$ is not one-to-one.  A basis for the
+  kernel is given by  $q(x), x q(x),\ldots,
+  x^{m-n} q(x)$.  Let $y_1,\ldots, y_n\in \Rset$ be given. The solution
+  set to the interpolation problem $\ev_\bx(p) = \by$, is given by
+  \[ \ev_\bx^{-1}(\by) = \{ r + s q : s \in \cP_{m-n} \}, \]
+  where
+  $r = \pol_\bx(\by)$
+  is the $n-1^\text{st}$ degree polynomial given by the Lagrange
+  interpolation formula.  To put it another way, the general solution
+  of the equation
+  \[ \ev_\bx(p)= \by \]
+  is given by
+  \[ p = r + s q,\quad s\in \cP_{n-m}\text{ free.}\]
+\end{proposition}
+\begin{proposition}[Overdetermined interpolation]
+   Let $x_1,\ldots, x_n\in \Rset$ be distinct. 
+  Suppose that $m\leq n-2$. Then,
+  the multi-evaluation mapping
+  $\ev_\bx:\cP_m\to \Rset^n$ is not onto.  If $m=n-2$, then
+  $\by\in\Rset^4$ belongs to $\img(\ev_\bx)$ if and only  if
+  \[ \left| \begin{matrix}
+        1 & x_1 & \ldots & x_1^{m}& y_1 \\
+        1 & x_2 & \ldots &x_2^{m}&y_2 \\
+        \vdots & \vdots & \ddots  & \vdots &\vdots\\
+        1 & x_{n-1} & \ldots &x_{n-1}^{m}&y_{n-1} \\
+        1& x_n & \ldots & x_n^{m} & y_n
+      \end{matrix}
+    \right|=0\]
+    More generally, for any $m\leq n-2$, the interpolation problem
+    $\ev_\bx(p)=\by,\; \by\in \Rset^n$ has a solution if and only
+    if $\orank M(\bx,\by) = m+1$ where
+    \[ M(\bx,\by)= \begin{bmatrix}
+        1 & x_1 & \ldots & x_1^{m}& y_1 \\
+        1 & x_2 & \ldots &x_2^{m}&y_2 \\
+        \vdots & \vdots & \ddots  & \vdots &\vdots\\
+        1 & x_{m+1} & \ldots &x_{m+1}^{m}&y_{m+1} \\
+        \vdots & \vdots & \vdots & \vdots &\vdots\\
+        1& x_n & \ldots & x_n^{m} & y_n
+      \end{bmatrix} \]
+\end{proposition}
+\begin{remark}
+The compatibility constraints on
+$y_1,\ldots, y_n$ for an overdetermined system amount to the condition
+that $\by$ lie in the image of $\ev_{\bx}$, or what is equivalent,
+belong to the column space of the corresponding transformation matrix.
+We can therefore obtain the constraint equations by row reducing the
+augmented matrix $M(\bx,\by)$ to echelon form.  The back entries of
+the last $n-m-1$ rows will hold the constraint equations.
+Equivalently, we can solve the interpolation problem for
+$(x_1,y_1),\ldots, (x_m,y_m)$ to obtain a $p=y_1 p_1 + y_{m+1}
+p_{m+1}\in \cP_m$.  The additional equations
+\[ y_i = y_1 p_1(x_i)+\cdots + y_{m+1} p_{m+1}(x_i),\; i=m+2,\ldots,
+n\] are the desired compatibility constraints on $y_1,\ldots, y_n$.
+  
+\end{remark}
+
+%%%%%
+%%%%%
+\end{document}

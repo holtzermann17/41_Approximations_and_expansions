@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{QuadraticConvergence}
+\pmcreated{2013-03-22 14:20:59}
+\pmmodified{2013-03-22 14:20:59}
+\pmowner{Koro}{127}
+\pmmodifier{Koro}{127}
+\pmtitle{quadratic convergence}
+\pmrecord{8}{35825}
+\pmprivacy{1}
+\pmauthor{Koro}{127}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A25}
+\pmrelated{LinearConvergence}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newcommand{\Lindent}{0.4in}
+\newenvironment{Lalgorithm}[4]{
+\textbf{Algorithm} \textsc{#1}\texttt{(#2)}\newline
+\textit{Input}: #3\newline
+\textit{Output}: #4
+
+}{}
+\newenvironment{Lfloatalgorithm}[6][h]{
+\begin{figure}[#1]
+\caption{#2}
+\begin{Lalgorithm}{#3}{#4}{#5}{#6}
+}{
+\end{Lalgorithm}
+\end{figure}
+}
+\newcommand{\Lgets}{\ensuremath{\gets}}
+\newcommand{\Lgroup}[1]{\textbf{begin}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}\\\textbf{end}}
+
+\newcommand{\Lif}[2]{\textbf{if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+
+\newcommand{\Lwhile}[2]{\textbf{while} #1 \\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+
+\newcommand{\Lelse}[1]{\textbf{else}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}}
+\newcommand{\Lelseif}[2]{\textbf{else if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\begin{document}
+A sequence $\{x_i\}$ in a metric space $(X,d)$ is said to converge quadratically to $x^*$ if there is a constant $1>c>0$ such that $d(x_{i+1},x^*) \leq c d(x_i,x^*)^2$ for all $i$.
+
+The convergence is said to be of order $p$ if $d(x_{i+1},x^*) \leq c d(x_i,x^*)^p$ for all $i$.
+%%%%%
+%%%%%
+\end{document}

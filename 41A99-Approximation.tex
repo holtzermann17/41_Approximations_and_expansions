@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Approximation}
+\pmcreated{2013-03-22 14:22:19}
+\pmmodified{2013-03-22 14:22:19}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{approximation}
+\pmrecord{12}{35862}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A99}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newcommand{\Lindent}{0.4in}
+\newenvironment{Lalgorithm}[4]{
+\textbf{Algorithm} \textsc{#1}\texttt{(#2)}\newline
+\textit{Input}: #3\newline
+\textit{Output}: #4
+
+}{}
+\newenvironment{Lfloatalgorithm}[6][h]{
+\begin{figure}[#1]
+\caption{#2}
+\begin{Lalgorithm}{#3}{#4}{#5}{#6}
+}{
+\end{Lalgorithm}
+\end{figure}
+}
+\newcommand{\Lgets}{\ensuremath{\gets}}
+\newcommand{\Lgroup}[1]{\textbf{begin}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}\\\textbf{end}}
+
+\newcommand{\Lif}[2]{\textbf{if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+
+\newcommand{\Lwhile}[2]{\textbf{while} #1 \\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+
+\newcommand{\Lelse}[1]{\textbf{else}\\\hspace*{\Lindent}\parbox{\textwidth}{#1}}
+\newcommand{\Lelseif}[2]{\textbf{else if} #1 \textbf{then}\\\hspace*{\Lindent}\parbox{\textwidth}{#2}}
+\begin{document}
+An approximation of some mathematical object (such as the number $\sqrt{2}$, the function $\sin(x)$, a circle,  or something else) is another mathematical object (such as value 1.414,  a function $x-x^3/6$, a  regular polygon with 
+64 sides) that has almost the same value or function values or shape as the original object.
+
+There are many different reasons for making an approximation. It can be that we have no way to know the exact value, 
+for example if we solve an equation by plotting a graph on a piece of paper and read the value from the x-axis, then 
+we only get an approximation of the exact value.  It can be that we know the exact value, say $e+\sqrt{2}$, but we 
+can't use that exact value, perhaps we need to draw a line of length $e+\sqrt{2}$cm, then we need a numerical approximation of the original value. $10^7\cdot \pi$ is an approximation of the number of seconds in a year.
+Perhaps we don't know how to draw the graph of the $\sin$ function, then we can make an approximation with another function that has approximately the same function values within some range of the argument.
+
+In every approximation we introduce an error by definition, since we are not using the correct value. This error can sometimes be controlled; for instance we make a smaller error if we use 3.1416 instead of 4 as the value of $\pi$. 
+The magnitude of the error that can be accepted depends on what we wish to do with the approximation.
+
+When we wish to approximate a function by another function, we can have different requirements on the approximation.  Sometimes, the approximating function may be required to pass through the actual points of the function, in which case we are dealing with a class of approximation techniques known as interpolation.  When merely having common points is not enough, one may require that the approximating function to have the same derivatives as the actual function (see Taylor series).  Other times, we may wish for the values of the approximation to differ from the exact values by less than a
+certain amount within a certain interval (see uniform convergence), or the approximations to be as close to the actual amounts as possible (see least square approximations). \\
+%%%%%
+%%%%%
+\end{document}

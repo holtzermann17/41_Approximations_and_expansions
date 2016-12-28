@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ExampleOfUseOfTaylorsTheorem}
+\pmcreated{2013-03-22 15:05:51}
+\pmmodified{2013-03-22 15:05:51}
+\pmowner{alozano}{2414}
+\pmmodifier{alozano}{2414}
+\pmtitle{example of use of Taylor's theorem}
+\pmrecord{4}{36826}
+\pmprivacy{1}
+\pmauthor{alozano}{2414}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A58}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{exa}[thm]{Example}
+
+% Some sets
+\newcommand{\Nats}{\mathbb{N}}
+\newcommand{\Ints}{\mathbb{Z}}
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\Complex}{\mathbb{C}}
+\newcommand{\Rats}{\mathbb{Q}}
+
+\newcommand{\peri}{\operatorname{Perimeter}}
+\newcommand{\lc}{\lim_{x\to c}}
+\newcommand{\lzero}{\lim_{x\to 0}}
+\newcommand{\lhzero}{\lim_{h\to 0}}
+\newcommand{\linf}{\lim_{x\to \infty}}
+\newcommand{\limn}{\lim_{n\to\infty}}
+\newcommand{\sumi}{\sum_{i=1}^\infty }
+\newcommand{\sumn}{\sum_{n=1}^\infty }
+\newcommand{\sumno}{\sum_{n=0}^\infty }
+\newcommand{\sumio}{\sum_{i=1}^\infty }
+\begin{document}
+In this entry we use Taylor's Theorem in the following form:
+
+\begin{thm}[Taylor's Theorem: Bounding the Error] Suppose $f$ and all its derivatives are continuous. If $T_n(x)$ is the $n$-th Taylor polynomial of $f(x)$ around $x=a$, then the error, or the difference between the real value of $f$ and the values of $T_n(x)$ is given by:
+$$|E_n(x)|=|f(x)-T_n(x)|\leq \frac{M}{(n+1)!}|x-a|^{n+1}$$
+where $M$ is the maximum value of $f^{(n+1)}$ (the $n+1$-th derivative of $f$) in the interval between $a$ and $x$.
+\end{thm}
+
+\begin{exa}
+Suppose we want to approximate $e$ using the Taylor polynomial of degree 4, $T_4(x)$, around $x=0$ for the function $e^x$. We know that 
+$$T_4(x)=1+x+x^2/2+x^3/3!+x^4/4!$$
+so we are asking how close are $e$ and $T_4(1)=1+1+1/2+1/6+1/24$. In order to use the formula in the theorem, we just need to find $M$, the maximum value of the $4$th derivative of $e^x$ between $a=0$ and $x=1$. Since $f^{(4)}=e^x$ and $e^x$ is strictly increasing, the maximum in $(0,1)$ happens at $x=1$. Thus $M=e$ which is a number, say, less than $3$. Therefore:
+$$|E_4(1)|=|f(1)-T_4(1)|=|e-(1+1+1/2+1/6+1/24)|\leq \frac{M}{5!}|1-0|^5=\frac{M}{5!}<\frac{3}{5!}=0.025$$
+Thus the approximation has an error of less than $0.025$. Actually, if we use a calculator we obtain that the error is {\it exactly} $0.0099$. But, of course, {\it the whole point of the theorem is not to use a calculator}.
+\end{exa}
+
+\begin{exa}
+What Taylor polynomial $T_n(x)$ (what $n$) should we use to approximate $e$ within $0.0001$? As above, we will be using the Taylor polynomial $T_n(x)$ for $e^x$, evaluated at $x=1$. Thus, we want the error $|E_n(1)|<0.0001$. Notice all derivatives are $e^x$ and the maximum happens at $x=1$, where $e^1=e$, so for all derivatives $M<3$. Hence by the theorem: 
+$$|E_n(1)|=|f(1)-T_n(1)|=|e-(1+1+1/2+\ldots+1/n!)|\leq \frac{M}{(n+1)!}|1-0|^{n+1}=\frac{M}{(n+1)!}<\frac{3}{(n+1)!}$$
+So we need $3/(n+1)! < 0.0001$. Try several values of $n$ until that is satisfied:
+$$ 3/2=1.5,\ 3/3!=0.5,\ 3/4!=0.125,\ 3/5!=0.025,\ 3/6! =0.00416$$
+$$ 3/7!=0.00059, \quad 3/8!=0.00007$$
+Thus $n=7$ should work. So we just need $T_7(x)$, or add $1+1+1/2+\ldots+1/7!$.
+\end{exa}
+%%%%%
+%%%%%
+\end{document}

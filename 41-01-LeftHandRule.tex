@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{LeftHandRule}
+\pmcreated{2013-03-22 15:57:38}
+\pmmodified{2013-03-22 15:57:38}
+\pmowner{Wkbj79}{1863}
+\pmmodifier{Wkbj79}{1863}
+\pmtitle{left hand rule}
+\pmrecord{16}{37974}
+\pmprivacy{1}
+\pmauthor{Wkbj79}{1863}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41-01}
+\pmclassification{msc}{28-00}
+\pmclassification{msc}{26A42}
+\pmrelated{RightHandRule}
+\pmrelated{MidpointRule}
+\pmrelated{RiemannSum}
+\pmrelated{ExampleOfEstimatingARiemannIntegral}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\begin{document}
+The \emph{left hand rule} for computing the Riemann integral $\displaystyle \int\limits_a^b f(x) \, dx$ is
+\[
+\int\limits_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{j=1}^n f \left( a+(j-1) \left( \frac{b-a}{n} \right) \right) \left( \frac{b-a}{n} \right).
+\]
+
+If the Riemann integral is considered as a measure of area under a curve, then the expressions $\displaystyle f \left( a+(j-1) \left( \frac{b-a}{n} \right) \right)$ \PMlinkescapetext{represent} the \PMlinkescapetext{heights} of the rectangles, and $\displaystyle \frac{b-a}{n}$ is the common \PMlinkescapetext{width} of the rectangles.
+
+The Riemann integral can be approximated by using a definite value for $n$ rather than taking a limit.  In this case, the partition is $\displaystyle \left\{ \left[ a, a+\frac{b-a}{n} \right) , \dots , \left[ a+\frac{(b-a)(n-1)}{n}, b \right] \right\}$, and the function is evaluated at the left endpoints of each of these intervals.  Note that this is a special case of a left Riemann sum in which the $x_j$'s are evenly spaced.
+%%%%%
+%%%%%
+\end{document}

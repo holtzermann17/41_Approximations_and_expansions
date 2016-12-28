@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{TaylorSeriesDerivationOf}
+\pmcreated{2013-03-22 15:25:24}
+\pmmodified{2013-03-22 15:25:24}
+\pmowner{apmc}{9183}
+\pmmodifier{apmc}{9183}
+\pmtitle{Taylor series, derivation of}
+\pmrecord{6}{37268}
+\pmprivacy{1}
+\pmauthor{apmc}{9183}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A58}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+Let $f(x)$ be given by the following power series:
+
+\begin{center}$\displaystyle f(x)=c_0+c_1(x-a)+c_2(x-a)^2+\cdots+c_n(x-a)^n+\cdots=\sum_{k=0}^{\infty}c_k(x-a)^k$\end{center}
+
+Now let's compute a few derivatives at $x=a.$
+
+\begin{center}$\displaystyle f(a)=c_0;\quad f'(a)=c_1;\quad f''(a)=2c_2;\quad f^{(3)}(a)=6c_3;\quad f^{(n)}(a)=n!c_n$\end{center}
+
+From this, it is clear that $\displaystyle c_n=\frac{f^{(n)}(a)}{n!}$, thus the series can be written as:
+
+\begin{center}$\displaystyle T_n=\sum_{k=0}^nc_k(x-a)^k=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k$\end{center}
+
+where $f(x)=T_{\infty}$.
+%%%%%
+%%%%%
+\end{document}

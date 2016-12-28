@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ProofOfWeierstrassApproximationTheorem}
+\pmcreated{2013-03-22 14:34:58}
+\pmmodified{2013-03-22 14:34:58}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{proof of Weierstrass approximation theorem}
+\pmrecord{9}{36145}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Proof}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A10}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+To simplify the notation, assume that the function is defined on the interval $[0,1]$.  This involves no loss of generality because if $f$ is defined on some other interval, one can make a linear change of variable which maps the domain of $f$ to $[0,1]$.
+
+\paragraph{The case $f(x) = 1 - \sqrt{1 - x}$}
+Let us start by demonstrating a few special cases of the theorem, starting with the case $f(x) = 1 - \sqrt{1 - x}$.  In this case, we can use the ancient Babylonian method of computing square roots to construct polynomial approximations.  Define the polynomials $P_0, P_1, P_2, \ldots$ recursively as
+ $$P_0 (x) = 0$$
+ $$P_{n+1} (x) = {1 \over 2} \left( P_n(x)^2 + x \right)$$
+It is an obvious consequence of this definition that, if $0 \le x \le 1$ then $0 \le P_n (x) \le 1$ for all $n$.  It is equally obvious that each $P_n$ is a monotonically increasing function on the interval $[0,1]$.  By subtracting the recursion from itself, cancelling, and factoring, we obtain the relation
+ $$P_{n+2} (x) - P_{n+1} (x) = {1 \over 2} (P_{n+1} (x) + P_n (x)) (P_{n+1} (x) - P_n (x))$$
+From this relation, we conclude that $P_{n+1} (x) \ge P_n (x)$ for all $n$ and all $x$ in $[0,1]$.  This implies that $\lim_{n \to \infty} P_n (x)$ exists for all $x$ in $[0,1]$.  Taking the limit of both sides of the recursion that defines $P_n$ and simplifying, one sees that $\lim_{n \to \infty} P_n (x) = 1 - \sqrt{1-x}$.  The relation also implies that $P_{n+1} (x) - P_n (x)$ is also a monotonically increasing function of $x$ in the interval $[0,1]$ for all $n$.  Therefore, 
+ $$P_{n+1} (x) - P_n (x) \le P_{n+1} (1) - P_n (1)$$
+Summing over $n$ and cancelling, one sees that
+ $$P_{m} (x) - P_n (x) \le P_{m} (1) - P_n (1)$$
+whenever $m > n$.  Taking the limit as $m$ approaches infinity, one concludes that
+ $$1 - \sqrt{1-x} - P_n(x) \le 1 - P_n (1)$$
+Since the $P_n$'s converge, for any $\epsilon > 0$, there exists an $n$ such that $1 - P_n (1) < \epsilon$.  For this value of $n$, $|f(x) - P_n (x)| < \epsilon$, so the Weierstrass approximation theorem holds in this case.
+
+\paragraph{The case $f(x) = |x-c|$}
+Next consider the special case $f(x) = |x-c|$, where $0 \le c \le 1$.  A little algebra shows that
+ $$\sqrt{(x-c)^2 + \epsilon^2 / 4} - |x-c| \le \epsilon / 2$$
+By the case of the approximation theorem already proven, there exists a polynomial $P$ such that
+ $$|\sqrt{(x-c)^2 + \epsilon^2 / 4} - P(x)| < \epsilon / 2$$
+when $x \in [0,1]$.  Combining the last two inequalities and applying the triangle inequality, one sees that $|f(x) - P(x)| < \epsilon$, so the Weierstrass approximation theorem holds in the case $f(x) = |x-c|$.
+
+\paragraph{The case of piecewise linear functions}
+A corollary of the result just proven is the Weierstrass appriximation theorem for piecewise linear functions.  Any piecewise linear function $\phi$ can be expressed as
+ $$\phi(x) = b + \sum_{m=0}^N a_m |x-c_m|$$
+for suitable constants $a_0, \ldots , a_N, b, c_0, \ldots , c_N$.  By the result just proven, there exist polynomials $P_0, \ldots,P_N$ such that
+ $$\left| a_m |x - c_m| - P_m \right| < \epsilon / N$$
+By the triangle inequality,
+ $$\left| \phi (x) - b - \sum_{m=0}^N P_m \right| < \epsilon$$
+
+\paragraph{The general proof}
+Having succeeded in proving all these special cases, we now have the courage to attack the general theorem.  In light of the case just proven, it suffices to show that if $f$ is continuous on [0,1] then for all $\epsilon > 0$ there exists a piecewise-linear function $\phi$ such that for all $x$ in $[0,1]$, $|f(x) - \phi (x)| < \epsilon / 2$.  For, if such a function exists, then there also exists a polynomial $P$ such that $|\phi(x) - P(x)| < \epsilon / 2$, but then $|f(x) - P(x)| < \epsilon$.
+
+Since the interval $[0,1]$ is compact, $f$ is uniformly continuous.  Hence, for all $\epsilon > 0$ there exists an integer $N$ such that $|f(x) - f(y)| < \epsilon / 2$ whenever $|x - y| \le 1/N$.
+
+Define $\phi$ by the following two conditions:  If $m$ is an integer between $0$ and $N$, $\phi (m/N) = f (m/N)$.  On any interval $[m/N,(m+1)/N]$, $\phi$ is linear.
+
+For every point $x$ in the interval $[0,1]$, there exists an integer $m$ such that $x$ lies in the subinterval $[m/N,(m+1)/M$.  Since a linear function is bounded by its values at the endpoints, $\phi(x)$ lies between $\phi(m/N) = f(m/N)$ and $\phi((m+1)/N) = f((m+1)/N)$.   Since $|f(m/N) - f((m+1)/N)| \le \epsilon/2$, it follows that $|f(m/N) - \phi(x)| \le \epsilon/2$.  Because $|x - m/N| \le 1/N$, it is also true that $|f(m/N) - f(x)| \le \epsilon/2$.  Hence, by the triangle inequality, $|f(x) - \phi(x)| < \epsilon$.
+%%%%%
+%%%%%
+\end{document}

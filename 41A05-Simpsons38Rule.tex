@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Simpsons38Rule}
+\pmcreated{2013-03-22 13:40:56}
+\pmmodified{2013-03-22 13:40:56}
+\pmowner{Daume}{40}
+\pmmodifier{Daume}{40}
+\pmtitle{Simpson's 3/8 rule}
+\pmrecord{11}{34351}
+\pmprivacy{1}
+\pmauthor{Daume}{40}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A05}
+\pmclassification{msc}{41A55}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+Simpson's $\frac{3}{8}$ rule is a method for approximating a
+definite integral by evaluating the integrand at finitely many
+points.  The formal rule is given by
+\[
+\int_{x_{0}}^{x_{3}}f(x)\,dx\;\approx\;\frac{3h}{8}\left[f(x_{0})+3f(x_{1})+3f(x_{2})+f(x_{3})\right]
+\]
+where $x_1=x_0+h$, $x_2=x_0+2h$, $x_3=x_0+3h$.
+
+
+
+Simpson's $\frac{3}{8}$ rule is the third Newton-Cotes quadrature
+formula. It has degree of precision 3. This means it is exact for
+polynomials of degree less than or equal to three. Simpson's
+$\frac{3}{8}$ rule is an improvement to the traditional Simpson's
+rule. The extra function evaluation gives a slightly more accurate
+approximation . We can see this with an example.
+
+
+
+
+
+Using the fundamental theorem of the calculus, one shows
+
+\[
+\int_{0}^{\pi}\sin(x)\,dx =2.
+\]
+
+In this case Simpson's rule gives,
+\[
+\int_{0}^{\pi}\sin(x)\,dx\,\approx\;\frac{\pi}{6}\left[\sin(0)+4\sin\left(\frac{\pi}{2}\right)+\sin(\pi)\right]\,=\,2.094
+\]
+
+
+However, Simpson's $\frac{3}{8}$ rule does slightly better.
+
+\[
+\int_{0}^{\pi}\sin(x)\,dx\,\approx\;\left(\frac{3}{8}\right)\frac{\pi}{3}\left[\sin(0)+3\sin\left(\frac{\pi}{3}\right)+3\sin\left(\frac{2\pi}{3}\right)+\sin(\pi)\right]\,=\,2.040
+\]
+%%%%%
+%%%%%
+\end{document}

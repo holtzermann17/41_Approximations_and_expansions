@@ -1,0 +1,173 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ExamplesOnHowToFindTaylorSeriesFromOtherKnownSeries}
+\pmcreated{2013-03-22 15:05:47}
+\pmmodified{2013-03-22 15:05:47}
+\pmowner{alozano}{2414}
+\pmmodifier{alozano}{2414}
+\pmtitle{examples on how to find Taylor series from other known series}
+\pmrecord{8}{36825}
+\pmprivacy{1}
+\pmauthor{alozano}{2414}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A58}
+\pmrelated{GettingTaylorSeriesFromDifferentialEquation}
+\pmrelated{TaylorSeriesOfArcusSine}
+\pmrelated{TaylorExpansionOfSqrt1x}
+\pmrelated{TaylorSeriesOfArcusTangent}
+\pmrelated{ApplicationOfLogarithmSeries}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{rem}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{exa}{Example}
+
+% Some sets
+\newcommand{\Nats}{\mathbb{N}}
+\newcommand{\Ints}{\mathbb{Z}}
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\Complex}{\mathbb{C}}
+\newcommand{\Rats}{\mathbb{Q}}
+\newcommand{\peri}{\operatorname{Perimeter}}
+\newcommand{\lc}{\lim_{x\to c}}
+\newcommand{\lzero}{\lim_{x\to 0}}
+\newcommand{\lhzero}{\lim_{h\to 0}}
+\newcommand{\linf}{\lim_{x\to \infty}}
+\newcommand{\limn}{\lim_{n\to\infty}}
+\newcommand{\sumi}{\sum_{i=1}^\infty }
+\newcommand{\sumn}{\sum_{n=1}^\infty }
+\newcommand{\sumno}{\sum_{n=0}^\infty }
+\newcommand{\sumio}{\sum_{i=1}^\infty }
+\begin{document}
+In this section we present numerous examples that provide a number of useful procedures to find new Taylor series from Taylor series that we already know. However, we are only worried about ``computing'' and we don't worry (for now) about the convergence of the series we find. \\
+
+We know ``by heart'' the following series:
+
+\begin{eqnarray*}
+e^x &=& 1+x+\frac{x^2}{2}+\frac{x^3}{3!}+\ldots = \sumno \frac{x^n}{n!}\\
+\cos x &=& 1- \frac{x^2}{2!}  +\frac{x^4}{4!}- \frac{x^6}{6!}+\ldots = \sumno (-1)^n \frac{x^{2n}}{(2n)!}\\
+\sin x &=& x- \frac{x^3}{3!}  +\frac{x^5}{5!}- \frac{x^7}{7!}+\ldots = \sumno (-1)^n \frac{x^{2n+1}}{(2n+1)!}\\
+(1+x)^p &=& 1+px + \frac{p(p-1)}{2!}x^2+\frac{p(p-1)(p-2)}{3!}x^3+\ldots + \frac{p(p-1)\cdot\ldots\cdot(p-(n-1))}{n!}x^n+\ldots\\
+\ln (1+x) &=& x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\ldots = \sumn (-1)^{n+1}\frac{x^n}{n}
+\end{eqnarray*} 
+\begin{rem}
+Recall that the first three have radius of convergence $R=\infty$ but for the last two $R=1$.
+\end{rem}
+
+\begin{exa}
+Find the Taylor series about $x=0$ for $\sin(x^2)$. If we try to take derivatives then we soon realize that consecutive derivatives get extremely hard to compute. However, one can do a simple trick. Since we know the Taylor series for $\sin(x)$ we can evaluate it at $x^2$:
+$$\sin x = x- \frac{x^3}{3!}  +\frac{x^5}{5!}- \frac{x^7}{7!}+\ldots = \sumno (-1)^n \frac{x^{2n+1}}{(2n+1)!}$$
+$$\sin(x^2) = (x^2) -\frac{(x^2)^3}{3!} + \frac{(x^2)^5}{5!} - \ldots = x^2-\frac{x^6}{3!}+\frac{x^{10}}{5!}-\ldots$$
+One can also use the $\Sigma$ notation:
+$$\sin(x^2)=\sumno (-1)^n \frac{(x^2)^{2n+1}}{(2n+1)!}=\sumno (-1)^n \frac{x^{2(2n+1)}}{(2n+1)!}.$$
+\end{exa}
+
+\begin{exa}
+Find the Taylor series about $x=0$ for $e^{-x^2}$ (this is a very important function, for example in probability theory). Again, we use the simple Taylor series of $e^x$:
+$$e^x = 1+x+\frac{x^2}{2}+\frac{x^3}{3!}+\ldots = \sumno \frac{x^n}{n!}$$
+$$e^{-x^2} = 1+(-x^2)+\frac{(-x^2)^2}{2}+\frac{(-x^2)^3}{3!}+\ldots= 1-x^2+\frac{x^4}{2}-\frac{x^6}{3!}+\ldots$$
+Using the sigma notation we obtain:
+$$e^{-x^2} = \sumno \frac{(-x^2)^n}{n!}=\sumno \frac{(-1)^nx^{2n}}{n!}.$$
+\end{exa}
+
+\begin{exa}
+Series can also be multiplied by $x$. For example, we find the Taylor series for $xe^x$:
+$$xe^x= x(1+x+\frac{x^2}{2}+\frac{x^3}{3!}+\ldots)= x+x^2+\frac{x^3}{2}+\frac{x^4}{3!}+\ldots)$$
+or
+$$xe^x= x \left( \sumno \frac{x^n}{n!} \right)=\sumno \frac{x^{n+1}}{n!}$$
+\end{exa}
+
+\begin{exa}
+Series can also be divided by $x$ {\bf provided} that the result has {\bf only} non-negative exponents. For example, we find the Taylor series for $\frac{\ln(1+x)}{x}$:
+$$\frac{\ln(1+x)}{x}=\frac{x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\ldots}{x}= 1-\frac{x}{2}+\frac{x^2}{3}-\frac{x^3}{4}+\ldots $$ 
+or
+$$\frac{\ln(1+x)}{x}= \frac{\sumn (-1)^{n+1}\frac{x^n}{n}}{x}=\sumn (-1)^{n+1}\frac{x^{n-1}}{n}$$
+\end{exa}
+
+\begin{exa}
+As well, we can multiply two Taylor series (term by term). Suppose we want to find the Taylor polynomial of degree $3$ about $x=0$ of $e^x\cos x$. Then we can multiply the respective Taylor polynomials of degree $3$ of $e^x$ and $\cos x$ and disregard any term higher than $3$:
+$$\left(1+x+\frac{x^2}{2}+\frac{x^3}{6}\right)\left(1-\frac{x^2}{2}\right)$$
+$$= \left(1-\frac{x^2}{2}\right) + \left(x-\frac{x^3}{2}\right) + \left(\frac{x^2}{2}\right) + \left(\frac{x^3}{6}\right)+\ldots $$
+Since every other term in the product is of degree higher than $3$ we disregard them. Thus:
+$$T_3(x)=\left(1-\frac{x^2}{2}\right) + \left(x-\frac{x^3}{2}\right) + \left(\frac{x^2}{2}\right) + \left(\frac{x^3}{6}\right)=1+x-\frac{x^3}{2}+\frac{x^3}{6}=1+x-\frac{x^3}{3}.$$
+\end{exa}
+
+\begin{exa}
+Find the first three terms of the Taylor series for $\sqrt{1+2\sin x}$. Since $\sqrt{1+x}=(1+x)^{1/2}$ we know that:
+$$\sqrt{1+x}=1+\frac{x}{2}-\frac{x^2}{8}+\ldots$$
+Thus:
+$$\sqrt{1+2\sin x}= 1+\frac{2\sin x}{2}-\frac{(2\sin x)^2}{8}+\ldots$$
+Moreover, $\sin x = x - \frac{x^3}{3!}+\ldots$:
+$$\sqrt{1+2\sin x}= 1+\frac{2(x - \frac{x^3}{3!}+\ldots)}{2}-\frac{(2(x - \frac{x^3}{3!}+\ldots))^2}{8}+\ldots$$
+By disregarding other than the first term in $\sin x$ we obtain the first three terms of the series are:
+$$\sqrt{1+2\sin x}=1 + \frac{2x}{2} - \frac{(2x)^2}{8}+\ldots=1+x-\frac{x^2}{2}+\ldots$$
+\end{exa}
+
+\begin{exa}[{\bf Differentiation}] Notice that we can deduce the series of $\sin x$ from the series for $\cos x$ by differentiating. Indeed $\frac{d}{dx} \cos x =- \sin x$ and we differentiate (term by term) the Taylor series of $\cos x$ we obtain the Taylor series of $\sin x$ (DO IT!).\\
+
+Another example. Let us deduce the Taylor series of $\frac{1}{(1-x)^2}$. Notice that $\frac{d}{dx} \frac{1}{(1-x)}= \frac{1}{(1-x)^2}$. Since:
+$$\frac{1}{1-x}= 1+x+x^2+x^3+\ldots$$
+by deriving both sides we obtain:
+$$\frac{1}{(1-x)^2}=0+1+2x+3x^2+\ldots=\sumno (n+1)x^n$$
+and if we derive again we obtain:
+$$\frac{2}{(1-x)^3}=2+6x+12x^2\ldots$$
+Thus,
+$$\frac{1}{(1-x)^3}=1+3x+6x^2+10x^3+\ldots=\sumno \frac{(n+2)(n+1)}{2}x^n.$$
+
+\end{exa}
+
+\begin{exa}[{\bf Integration}] Finally, we will deduce the Taylor series for $\arctan x$ using integration (term by term). Notice that:
+$$\int \frac{1}{1+x^2} dx = \arctan x + C$$
+Moreover, since $1/(1-x)=1+x+x^2+x^3+\ldots$ by substituting $x$ by $-x^2$ we obtain:
+$$\frac{1}{1+x^2}=1-x^2+x^4-x^6+\ldots=\sumno (-1)^n x^{2n}$$
+Thus, the Taylor series of $\arctan x$ can be constructed integrating the previous one:
+$$\arctan x = \int \frac{1}{1+x^2} dx = \int (1-x^2+x^4-x^6+\ldots )dx = x -\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\ldots$$
+In $\Sigma$ notation:
+$$\arctan x = \int \frac{1}{1+x^2} dx = \int \sumno (-1)^n x^{2n} dx = \sumno (-1)^n \int x^{2n} dx = \sumno (-1)^n \frac{x^{2n+1}}{2n+1}$$
+ 
+\end{exa}
+
+
+\begin{exa}
+As an application of the previous example, we compute $\pi$. Indeed:
+$$\arctan x =  \sumno (-1)^n \frac{x^{2n+1}}{2n+1}$$
+converges between $-1\leq x\leq 1$ and in particular
+$$\arctan 1 = \frac{\pi}{4}$$
+by the definition of $\tan x$ and $\arctan x$. Thus:
+$$\frac{\pi}{4}=\sumno (-1)^n \frac{1^{2n+1}}{2n+1}=\sumno \frac{(-1)^n}{2n+1}$$
+and 
+$$\pi = 4\left(\sumno \frac{(-1)^n}{2n+1}\right)=4\left(1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\frac{1}{9}-\ldots\right)$$
+For example, if one adds up to the $1/9$ term, one obtains the approximation $\pi\approx 3.33$. Unfortunately, the convergence is very slow. If you want to have about $m$ correct digits then you have to add about $10^m/2$ terms. For example, if you add $10^3/2=500$ terms we get $3.143588\ldots$.
+\end{exa}
+%%%%%
+%%%%%
+\end{document}

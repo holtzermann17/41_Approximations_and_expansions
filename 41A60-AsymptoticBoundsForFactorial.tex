@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{AsymptoticBoundsForFactorial}
+\pmcreated{2013-03-22 15:54:25}
+\pmmodified{2013-03-22 15:54:25}
+\pmowner{stevecheng}{10074}
+\pmmodifier{stevecheng}{10074}
+\pmtitle{asymptotic bounds for factorial}
+\pmrecord{7}{37910}
+\pmprivacy{1}
+\pmauthor{stevecheng}{10074}
+\pmtype{Result}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A60}
+\pmclassification{msc}{68Q25}
+\pmrelated{StirlingsApproximation}
+\pmrelated{GrowthOfExponentialFunction}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+%\usepackage{enumerate}
+%\usepackage{graphicx}
+%\usepackage{psfrag}
+%%%\usepackage{xypic}
+
+% define commands here
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\absW}[1]{\left\lvert#1\right\rvert}
+\providecommand{\absB}[1]{\Bigl\lvert#1\Bigr\rvert}
+\providecommand{\defnterm}[1]{\emph{#1}}
+
+\begin{document}
+Stirling's formula furnishes the following asymptotic
+bound for the factorial:
+\begin{align*}
+n! = \sqrt{2\pi} \, n^{n+1/2} e^{-n} \, \bigl( 1+ \Theta(\tfrac 1 n) \bigr)\,, \quad n \to \infty\,.
+\end{align*}
+
+The following less precise bounds are useful for counting purposes
+in computer science:
+
+\begin{align}
+n! &= o(n^n) \label{eq:nf-upper} \\
+n! &= \omega(n^{\lambda n}) \qquad \text{for every $0 \leq \lambda < 1$} \label{eq:nf-lower} \\
+\log n! &= \Theta(n \log n) \label{eq:log-nf}
+\end{align}
+
+($o$, $\omega$, and $\Theta$ are Landau notation.)
+
+\begin{proof}[Proof of the upper bound of equation \eqref{eq:nf-upper}]
+We must show that for every $\varepsilon > 0$, we have
+\[
+n! \leq \varepsilon \, n^n \quad \text{for large enough $n$.}
+\]
+
+To see this, write
+\begin{align*}
+n! &= \underbrace{\sqrt{2\pi} \, \frac{\sqrt{n}}{e^n} \, \bigl(1 + O(\tfrac 1 n) \bigr)} \, n^n\,,
+\end{align*}
+and observe that the middle quantity tends to $0$ as 
+$n \to \infty$, 
+so it can be made smaller than any fixed $\varepsilon$
+by taking $n$ large.
+\end{proof}
+
+\begin{proof}[Proof of the lower bound of equation \eqref{eq:nf-lower}]
+We are to show that for every $C > 0$, we have
+\[
+n! \geq C \, n^{\lambda n} \quad \text{for large enough $n$.}
+\]
+
+We write:
+\begin{align*}
+n! &= \underbrace{\sqrt{2\pi n} \, \bigl( 1+O(\tfrac 1 n) \bigr) 
+\left(\frac{n}{e^{1/(1-\lambda)}}\right)^{(1-\lambda) n}} \, n^{\lambda n}\,,
+\end{align*}
+and the middle expression can be made to be $\geq C$ 
+by taking $n$ to be large.
+\end{proof}
+
+\begin{proof}[Proof of bound for $\log n!$, equation \eqref{eq:log-nf}]
+Showing $\log n! = O (n \log n)$
+is simple:
+\begin{align*}
+n! &= n(n-1)\dotsm(2)(1) \leq n^n \\
+\log n! &\leq n \log n
+\end{align*}
+for all $n \geq 1$.
+
+To show $\log n! = \Omega (n \log n)$,
+we can take equation \eqref{eq:nf-lower} with the constants $C = 1$
+and $\lambda = \tfrac 1 2$.  Then
+\begin{align*}
+\log n! \geq \tfrac 1 2 \, n \log n 
+\end{align*}
+for large enough $n$.  In fact, it may be checked that $n \geq 1$ suffices.
+\end{proof}
+
+\begin{thebibliography}{3}
+\bibitem{CLRS}
+Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein.
+{\it Introduction to Algorithms}, second edition. MIT Press, 2001.
+\bibitem{Spivak}
+Michael Spivak. {\it Calculus}, third edition. Publish or Perish, 1994.
+\end{thebibliography}
+
+%%%%%
+%%%%%
+\end{document}

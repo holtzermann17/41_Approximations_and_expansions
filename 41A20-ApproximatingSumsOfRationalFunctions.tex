@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ApproximatingSumsOfRationalFunctions}
+\pmcreated{2013-03-22 18:42:23}
+\pmmodified{2013-03-22 18:42:23}
+\pmowner{rspuzio}{6075}
+\pmmodifier{rspuzio}{6075}
+\pmtitle{approximating sums of rational functions}
+\pmrecord{7}{41470}
+\pmprivacy{1}
+\pmauthor{rspuzio}{6075}
+\pmtype{Topic}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A20}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+Given a sum of the form $\sum_{m=n}^\infty f(m)$ where $f$ is a rational
+function, it is possible to approximate it by approximating $f$ by another
+rational function which can be summed in closed form.  Furthermore, the
+approximation so obtained becomes better as $n$ increases.
+
+We begin with a simple illustrative example.  Suppose that we want to sum
+$\sum_{m=n}^\infty 1/m^2$.  We approximate $m^2$ by $m^2 - 1/4$, which 
+factors as $(m+1/2)(m-1/2)$.  Then, upon separating the approximate summand
+into partial fractions, the sum collapses:
+\begin{align*}
+ \sum_{m=n}^\infty {1 \over (m+1/2)(m-1/2)} 
+   &= \sum_{m=n}^\infty \left( {1 \over m-1/2} - {1 \over m+1/2} \right) \\
+   &= \sum_{m=n}^\infty {1 \over m-1/2} -
+      \sum_{m=n+1}^\infty {1 \over m-1/2} \\
+   &= {1 \over n-1/2}
+\end{align*}
+
+Using a similar approach, we may estimate the error of our approximation.
+
+[general method to come]
+%%%%%
+%%%%%
+\end{document}

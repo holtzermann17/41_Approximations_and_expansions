@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{CompositeTrapezoidalRule}
+\pmcreated{2013-03-22 16:05:16}
+\pmmodified{2013-03-22 16:05:16}
+\pmowner{Wkbj79}{1863}
+\pmmodifier{Wkbj79}{1863}
+\pmtitle{composite trapezoidal rule}
+\pmrecord{11}{38147}
+\pmprivacy{1}
+\pmauthor{Wkbj79}{1863}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A05}
+\pmclassification{msc}{41A55}
+\pmsynonym{composite trapezoid rule}{CompositeTrapezoidalRule}
+\pmrelated{TrapezoidalRule}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\begin{document}
+\PMlinkescapeword{proposition}
+\PMlinkescapeword{section}
+
+\textbf{Definition}\\
+The \emph{composite trapezoidal rule} is a method for approximating a definite integral by evaluating the integrand at $n$ points.  Let $[a,b]$ be the interval of integration with a partition $a=x_0<x_1<\ldots<x_n=b$.  Then the formal rule is given by
+\[
+\int\limits_a^b f(x)\,dx\;
+\approx\;\frac{1}{2}\sum_{j=1}^n(x_j-x_{j-1})\left[f(x_{j-1})+f(x_j)\right].
+\]
+The \emph{composite trapezoidal rule} can also be applied to a partition which is uniformly spaced (\PMlinkname{i.e.}{Ie} $x_j-x_{j-1}=h$ for all $j\in\{1,\ldots,n\}$).  In this case, the formal rule is given by 
+\[
+\int\limits_a^b f(x)\,dx\;
+\approx\;\frac{h}{2}\left[ f(a) + 2\sum_{j=1}^{n-1}f(a+jh)+f(b)\right].
+\]
+
+Both expressions of the composite trapezoidal rule come from determining the areas of the figures in the corresponding graph.  These figures are usually right trapezoids, but may also be right triangles or line segments on the $x$ \PMlinkescapetext{axis}.  See the entry on the trapezoidal rule for more details.  See the section of the entry on examples of estimating a Riemann integral which deals with the composite trapezoidal rule for an illustration.
+
+\textbf{Remark:}\\
+The composite trapezoidal rule uses the trapezoidal rule on each subinterval, which is readily observed from
+\begin{eqnarray*}
+\int\limits_a^b f(x)\,dx\;&=&\;\sum_{j=1}^n\int\limits_{x_{j-1}}^{x_j} f(x)\,dx\;\\
+&\approx&\;\frac{1}{2}\sum^n_{j=1}(x_j-x_{j-1})\left[f(x_{j-1})+f(x_j)\right].
+\end{eqnarray*}
+
+\textbf{Proposition:}\\
+If $f$ is Riemann integrable on $[a,b]$, $|f''(x)| \le M$ for all $x \in [a,b]$, and $n$ is the number of intervals of the partition used to approximate $\int_a^b f(x) \, dx$, then
+\[
+\left| \int\limits_a^b f(x) \, dx - \frac{1}{2}\sum_{j=1}^n(x_j-x_{j-1})\left[f(x_{j-1})+f(x_j)\right]
+\right| \le \frac{M(b-a)^3}{12n^2}.
+\]
+%%%%%
+%%%%%
+\end{document}

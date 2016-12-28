@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ApproximationOfTheLogFunction}
+\pmcreated{2013-03-22 15:18:38}
+\pmmodified{2013-03-22 15:18:38}
+\pmowner{Mathprof}{13753}
+\pmmodifier{Mathprof}{13753}
+\pmtitle{approximation of the log function}
+\pmrecord{10}{37113}
+\pmprivacy{1}
+\pmauthor{Mathprof}{13753}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A60}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+Because
+\begin{eqnarray*}
+\lim_{x\rightarrow\ 0} x \log\left(x\right) &=& \lim_{x\rightarrow 0}  x^x - 1
+\end{eqnarray*}
+we can approximate $\log{\left(x\right)}$ for small $x$:
+\begin{eqnarray*}
+\log\left(x\right) &\approx& \frac{ x^x - 1 }{ x }.
+\end{eqnarray*}
+
+A perhaps more interesting and useful result is that for $x$ small we have the approximation
+\[ \log{(1+x)} \approx x. \]
+
+In general, if $x$ is smaller than $0.1$ our approximation is practical.  This occurs because for small $x$, the area under the curve (which is what $\log$ is a measurement of) is approximately that of a rectangle of height 1 and width $x$.
+
+Now when we combine this approximation with the formula $\log(ab)=\log(a) + \log(b)$, we can now approximate the logarithm of many positive numbers.  In fact, scientific calculators use a (somewhat more precise) version of the same procedure.
+
+For example, suppose we wanted $\log(1.21)$.  If we estimate $\log(1.1) + \log(1.1)$ by taking $0.1 + 0.1 = 0.2$, we would be pretty close.
+%%%%%
+%%%%%
+\end{document}

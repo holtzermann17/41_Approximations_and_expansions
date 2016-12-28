@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{Interpolation}
+\pmcreated{2013-03-22 14:20:05}
+\pmmodified{2013-03-22 14:20:05}
+\pmowner{CWoo}{3771}
+\pmmodifier{CWoo}{3771}
+\pmtitle{interpolation}
+\pmrecord{13}{35805}
+\pmprivacy{1}
+\pmauthor{CWoo}{3771}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A05}
+\pmclassification{msc}{65D05}
+\pmdefines{breakpoints}
+\pmdefines{interpolating function}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+\emph{Interpolation} is a set of techniques in approximation where, given a set of paired data points
+$$(x_1,y_1),(x_2,y_2),\ldots, (x_n,y_n),\ldots$$ one is often interested in 
+\begin{itemize}
+\item finding a relation (usually in the form of a function $f$) that passes through (or is satisfied by) every one of these points, if the relation is unknown at the beginning,
+\item finding a simplified relation to replace the original known relation that is very complicated and difficult to use,
+\item finding other paired data points $(x_{\alpha},y_{\alpha})$ in addition to the existing ones.
+\end{itemize}
+The data points $(x_i,y_i)$ are called the \emph{breakpoints}, and the function $f$ is the \emph{interpolating function} such that $f(x_i)=y_i$ for each $i$.
+
+The choice of the interpolating function depends on what we wish to do with it. In some cases a polynomial is required, sometimes a piecewise linear  function is prefered (linear interpolation), other times a \PMlinkid{spline}{4339} is of interest, when the interpolating function is required to not only to be continuous, but differentiable, or even smooth.
+
+Even different strategies for finding the same interpolating function are of interest. The Lagrange interpolation formula is a direct way to calculate the interpolating polynomial. The Vandermonde interpolation formula is mainly of interest as a theoretical tool. Numerical implementation of Vandermonde interpolation involves solution of large ill conditioned linear systems, so numerical stability is questionable.
+%%%%%
+%%%%%
+\end{document}

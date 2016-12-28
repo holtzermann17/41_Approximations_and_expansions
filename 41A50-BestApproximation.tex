@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{BestApproximation}
+\pmcreated{2013-03-22 17:31:23}
+\pmmodified{2013-03-22 17:31:23}
+\pmowner{asteroid}{17536}
+\pmmodifier{asteroid}{17536}
+\pmtitle{best approximation}
+\pmrecord{4}{39915}
+\pmprivacy{1}
+\pmauthor{asteroid}{17536}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{41A50}
+\pmsynonym{optimal approximation}{BestApproximation}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\begin{document}
+One of the \PMlinkescapetext{central} problems in approximation theory is to determine points that minimize distances (to a given point or subset). More precisely,
+
+{\bf Problem -} Let $X$ be a metric space and $S \subseteq X$ a subset. Given $x_0 \in X$ we want to know if there exists a point in $S$ that minimizes the distance to $x_0$, i.e. if there exists $y_0 \in S$ such that
+\begin{displaymath}
+d(x_0,y_0)=\inf_{y \in S}d(x_0,y)
+\end{displaymath}
+
+{\bf Definition -} A point $y_0$ that \PMlinkescapetext{satisfies} the above conditions is called a {\bf best approximation} of $x_0$ in $S$.
+
+In general, best approximations do not exist. Thus, the problem is usually to identify classes of spaces $X$ and $S$ where the existence of best approximations can be assured.
+
+{\bf Example :} When $S$ is compact, best approximations of a given point $x_0 \in X$ in $S$ always exist.
+
+After one assures the existence of a best approximation, one can question about its uniqueness and how to calculate it explicitly.
+
+{\bf Remark -} There is no reason to restrict to metric spaces. The definition of best approximation can be given for pseudo-metric spaces, semimetric spaces or any other space where a suitable notion of "distance" can be given.
+%%%%%
+%%%%%
+\end{document}
