@@ -1,0 +1,296 @@
+<!DOCTYPE html><html>
+<head>
+<title>best approximation in inner product spaces</title>
+<!--Generated on Fri Feb  9 21:28:08 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">best approximation in inner product spaces</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">The study of best approximations in inner product spaces has a very elegant treatment with profound consequences. Most of the theory of Hilbert spaces depends on this study and several approximation problems are better understood using this techniques and results.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">For example: least square fitting, linear regression, approximation of functions by polynomials, among many other problems, can be seen as particular cases of the general study of best approximation in inner product spaces.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Some of the above problems are going to be discussed later in this entry.</p>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Existence and Uniqueness</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">Our fundamental result on the existence and uniqueness of best approximations is the following (we postpone its proof to this attached entry (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/ProofOfExistenceAndUniquenessOfBestApproximations</span>)):</p>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Theorem -</span> Let <math id="S1.p2.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> be an inner product space and <math id="S1.p2.m2" class="ltx_Math" alttext="A\subseteq X" display="inline"><mrow><mi>A</mi><mo>⊆</mo><mi>X</mi></mrow></math> a complete (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/Complete</span>), convex and non-empty subset. Then for every <math id="S1.p2.m3" class="ltx_Math" alttext="x\in X" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow></math> there exists a unique best approximation (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/BestApproximation</span>) of <math id="S1.p2.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in <math id="S1.p2.m5" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, i.e. there exists a unique element <math id="S1.p2.m6" class="ltx_Math" alttext="a_{0}\in A" display="inline"><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>∈</mo><mi>A</mi></mrow></math> such that</p>
+<table id="S1.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S1.Ex1.m1" class="ltx_Math" alttext="\|x-a_{0}\|=d(x,A)=\inf_{a\in A}\|x-a\|." display="block"><mrow><mrow><mrow><mo>∥</mo><mrow><mi>x</mi><mo>-</mo><msub><mi>a</mi><mn>0</mn></msub></mrow><mo>∥</mo></mrow><mo>=</mo><mrow><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><munder><mo movablelimits="false">inf</mo><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></munder><mo>⁡</mo><mrow><mo>∥</mo><mrow><mi>x</mi><mo>-</mo><mi>a</mi></mrow><mo>∥</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Geometric Interpretation</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">The following result gives a very geometric interpretation of the best approximation when <math id="S2.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is a subspace of <math id="S2.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>. We also postpone its proof to an attached entry.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Theorem -</span> Let <math id="S2.p2.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> be an inner product space, <math id="S2.p2.m2" class="ltx_Math" alttext="A\subseteq X" display="inline"><mrow><mi>A</mi><mo>⊆</mo><mi>X</mi></mrow></math> a subspace and <math id="S2.p2.m3" class="ltx_Math" alttext="x\in X" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow></math>. The following statements are equivalent:</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="a_{0}\in A" display="inline"><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>∈</mo><mi>A</mi></mrow></math> is the best approximation of <math id="I1.i1.p1.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in <math id="I1.i1.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="a_{0}\in A" display="inline"><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>∈</mo><mi>A</mi></mrow></math> and <math id="I1.i2.p1.m2" class="ltx_Math" alttext="x-a_{0}\perp A" display="inline"><mrow><mrow><mi>x</mi><mo>-</mo><msub><mi>a</mi><mn>0</mn></msub></mrow><mo>⟂</mo><mi>A</mi></mrow></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">Thus, the best approximation of <math id="S2.p3.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in a subspace <math id="S2.p3.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is just the orthogonal projection of <math id="S2.p3.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in <math id="S2.p3.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>.
+</p>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Calculation of Best Approximations</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">When the <math id="S3.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is a complete subspace of <math id="S3.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>, the best approximation can be ”calculated” explicitly. Recall that, in this case, <math id="S3.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> becomes an Hilbert space (since it is complete) and therefore it has an orthonormal basis.</p>
+</div>
+<div id="S3.p2" class="ltx_para">
+<p class="ltx_p">Again, we postpone the proof of the next result to an attached entry.</p>
+</div>
+<div id="S3.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Theorem -</span> Let <math id="S3.p3.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> be an inner product space and <math id="S3.p3.m2" class="ltx_Math" alttext="A\subseteq X" display="inline"><mrow><mi>A</mi><mo>⊆</mo><mi>X</mi></mrow></math> a complete subspace. Let <math id="S3.p3.m3" class="ltx_Math" alttext="(e_{i})_{i\in J}" display="inline"><msub><mrow><mo stretchy="false">(</mo><msub><mi>e</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mi>i</mi><mo>∈</mo><mi>J</mi></mrow></msub></math> be an orthonormal basis for <math id="S3.p3.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>. Then for every <math id="S3.p3.m5" class="ltx_Math" alttext="x\in X" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow></math> the best approximation <math id="S3.p3.m6" class="ltx_Math" alttext="a_{0}\in A" display="inline"><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>∈</mo><mi>A</mi></mrow></math> of <math id="S3.p3.m7" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in <math id="S3.p3.m8" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is given by</p>
+<table id="S3.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.Ex2.m1" class="ltx_Math" alttext="a_{0}=\sum_{i\in J}\langle x,e_{i}\rangle e_{i}\;." display="block"><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mrow><munder><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>i</mi><mo>∈</mo><mi>J</mi></mrow></munder><mrow><mrow><mo stretchy="false">⟨</mo><mi>x</mi><mo>,</mo><msub><mi>e</mi><mi>i</mi></msub><mo stretchy="false">⟩</mo></mrow><mo>⁢</mo><mpadded width="+2.8pt"><msub><mi>e</mi><mi>i</mi></msub></mpadded></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S3.p4" class="ltx_para">
+<p class="ltx_p">One can also write the best approximation in  of any other basis (not necessarily an orthonormal one). For simplicity we present here how that can be done when <math id="S3.p4.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is a finite dimensional subspace of <math id="S3.p4.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>.</p>
+</div>
+<div id="S3.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Theorem -</span> Let <math id="S3.p5.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> be an inner product space and <math id="S3.p5.m2" class="ltx_Math" alttext="A\subseteq X" display="inline"><mrow><mi>A</mi><mo>⊆</mo><mi>X</mi></mrow></math> a finite dimensional subspace. Let <math id="S3.p5.m3" class="ltx_Math" alttext="v_{1},\dots,v_{n}" display="inline"><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>v</mi><mi>n</mi></msub></mrow></math> be a basis for <math id="S3.p5.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>. Then for every <math id="S3.p5.m5" class="ltx_Math" alttext="x\in X" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow></math> the best approximation <math id="S3.p5.m6" class="ltx_Math" alttext="a_{0}\in A" display="inline"><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>∈</mo><mi>A</mi></mrow></math> of <math id="S3.p5.m7" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> in <math id="S3.p5.m8" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> is given by</p>
+<table id="S3.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.Ex3.m1" class="ltx_Math" alttext="a_{0}=\sum_{i=1}^{n}a_{0}^{i}v_{i}" display="block"><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mrow><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mrow><msubsup><mi>a</mi><mn>0</mn><mi>i</mi></msubsup><mo>⁢</mo><msub><mi>v</mi><mi>i</mi></msub></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">where the coefficients <math id="S3.p5.m9" class="ltx_Math" alttext="a_{0}^{i}" display="inline"><msubsup><mi>a</mi><mn>0</mn><mi>i</mi></msubsup></math> are the solutions of the system of equations</p>
+<table id="S3.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.Ex4.m1" class="ltx_Math" alttext="\begin{pmatrix}\langle v_{1},v_{1}\rangle&amp;\cdots&amp;\langle v_{1},v_{n}\rangle\\
+\vdots&amp;\ddots&amp;\vdots\\
+\langle v_{n},v_{1}\rangle&amp;\cdots&amp;\langle v_{n},v_{n}\rangle\end{pmatrix}%
+\begin{pmatrix}a_{0}^{1}\\
+\vdots\\
+a_{0}^{n}\end{pmatrix}=\begin{pmatrix}\langle x,v_{1}\rangle\\
+\vdots\\
+\langle x,v_{n}\rangle\end{pmatrix}\;." display="block"><mrow><mrow><mrow><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mrow><mo stretchy="false">⟨</mo><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><msub><mi>v</mi><mn>1</mn></msub><mo stretchy="false">⟩</mo></mrow></mtd><mtd columnalign="center"><mi mathvariant="normal">⋯</mi></mtd><mtd columnalign="center"><mrow><mo stretchy="false">⟨</mo><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><msub><mi>v</mi><mi>n</mi></msub><mo stretchy="false">⟩</mo></mrow></mtd></mtr><mtr><mtd columnalign="center"><mi mathvariant="normal">⋮</mi></mtd><mtd columnalign="center"><mi mathvariant="normal">⋱</mi></mtd><mtd columnalign="center"><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd columnalign="center"><mrow><mo stretchy="false">⟨</mo><msub><mi>v</mi><mi>n</mi></msub><mo>,</mo><msub><mi>v</mi><mn>1</mn></msub><mo stretchy="false">⟩</mo></mrow></mtd><mtd columnalign="center"><mi mathvariant="normal">⋯</mi></mtd><mtd columnalign="center"><mrow><mo stretchy="false">⟨</mo><msub><mi>v</mi><mi>n</mi></msub><mo>,</mo><msub><mi>v</mi><mi>n</mi></msub><mo stretchy="false">⟩</mo></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><msubsup><mi>a</mi><mn>0</mn><mn>1</mn></msubsup></mtd></mtr><mtr><mtd columnalign="center"><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd columnalign="center"><msubsup><mi>a</mi><mn>0</mn><mi>n</mi></msubsup></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo>=</mo><mpadded width="+2.8pt"><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mrow><mo stretchy="false">⟨</mo><mi>x</mi><mo>,</mo><msub><mi>v</mi><mn>1</mn></msub><mo stretchy="false">⟩</mo></mrow></mtd></mtr><mtr><mtd columnalign="center"><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd columnalign="center"><mrow><mo stretchy="false">⟨</mo><mi>x</mi><mo>,</mo><msub><mi>v</mi><mi>n</mi></msub><mo stretchy="false">⟩</mo></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mpadded></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S3.p6" class="ltx_para">
+<p class="ltx_p"><math id="S3.p6.m1" class="ltx_Math" alttext="Remark-" display="inline"><mrow><mrow><mi>R</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>k</mi></mrow><mo>-</mo></mrow></math> The above matrix is a symmetric positive definite (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/PositiveDefinite</span>) matrix, which implies that the system has a unique solution as expected.</p>
+</div>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Applications</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p class="ltx_p">There are several applications of the above results. We explore two of them in the following.</p>
+</div>
+<section id="S4.SS0.SSS1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">4.0.1 </span> - Approximation of functions by polynomials :</h3>
+
+<div id="S4.SS0.SSS1.p1" class="ltx_para">
+<p class="ltx_p">Suppose we want to find a polynomial of degree <math id="S4.SS0.SSS1.p1.m1" class="ltx_Math" alttext="\leq n" display="inline"><mrow><mi></mi><mo>≤</mo><mi>n</mi></mrow></math> that approximates in the best possible way a given function <math id="S4.SS0.SSS1.p1.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. We are in fact trying to find a point in the subspace of polynomials of degree <math id="S4.SS0.SSS1.p1.m3" class="ltx_Math" alttext="\leq n" display="inline"><mrow><mi></mi><mo>≤</mo><mi>n</mi></mrow></math> that is closest to <math id="S4.SS0.SSS1.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, i.e. we are trying to find the best approximation of <math id="S4.SS0.SSS1.p1.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> in that subspace.</p>
+</div>
+<div id="S4.SS0.SSS1.p2" class="ltx_para">
+<p class="ltx_p">For example, let <math id="S4.SS0.SSS1.p2.m1" class="ltx_Math" alttext="f\in L^{2}([0,1])" display="inline"><mrow><mi>f</mi><mo>∈</mo><mrow><msup><mi>L</mi><mn>2</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Consider the basis <math id="S4.SS0.SSS1.p2.m2" class="ltx_Math" alttext="v_{k}(t)=t^{k},\quad 0\leq k\leq n,\;" display="inline"><mrow><mrow><mrow><mrow><msub><mi>v</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>t</mi><mi>k</mi></msup></mrow><mo rspace="12.5pt">,</mo><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi></mrow></mrow><mo rspace="5.3pt">,</mo></mrow></math> of the subspace of polynomials of degree <math id="S4.SS0.SSS1.p2.m3" class="ltx_Math" alttext="\leq n" display="inline"><mrow><mi></mi><mo>≤</mo><mi>n</mi></mrow></math>.</p>
+</div>
+<div id="S4.SS0.SSS1.p3" class="ltx_para">
+<p class="ltx_p">The best approximation of <math id="S4.SS0.SSS1.p3.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> by these polynomials is the function <math id="S4.SS0.SSS1.p3.m2" class="ltx_Math" alttext="a_{0}(t)=a_{0}^{1}+a_{0}^{1}t+\dots+a_{0}^{n}t^{n}" display="inline"><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msubsup><mi>a</mi><mn>0</mn><mn>1</mn></msubsup><mo>+</mo><mrow><msubsup><mi>a</mi><mn>0</mn><mn>1</mn></msubsup><mo>⁢</mo><mi>t</mi></mrow><mo>+</mo><mi mathvariant="normal">…</mi><mo>+</mo><mrow><msubsup><mi>a</mi><mn>0</mn><mi>n</mi></msubsup><mo>⁢</mo><msup><mi>t</mi><mi>n</mi></msup></mrow></mrow></mrow></math>, where the coefficients <math id="S4.SS0.SSS1.p3.m3" class="ltx_Math" alttext="a_{0}^{1},\dots,a_{0}^{n}" display="inline"><mrow><msubsup><mi>a</mi><mn>0</mn><mn>1</mn></msubsup><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msubsup><mi>a</mi><mn>0</mn><mi>n</mi></msubsup></mrow></math> are the solutions of the system</p>
+<table id="S4.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S4.Ex5.m1" class="ltx_Math" alttext="\begin{pmatrix}1&amp;\cdots&amp;\frac{1}{n+1}\\
+\vdots&amp;\ddots&amp;\vdots\\
+\frac{1}{n+1}&amp;\cdots&amp;\frac{1}{2n+1}\end{pmatrix}\begin{pmatrix}a_{0}^{1}\\
+\vdots\\
+a_{0}^{n}\end{pmatrix}=\begin{pmatrix}\int_{0}^{1}f(t)dt\\
+\vdots\\
+\int_{0}^{1}t^{n}f(t)dt\end{pmatrix}\;." display="block"><mrow><mrow><mrow><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mi mathvariant="normal">⋯</mi></mtd><mtd columnalign="center"><mstyle displaystyle="false"><mfrac><mn>1</mn><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mstyle></mtd></mtr><mtr><mtd columnalign="center"><mi mathvariant="normal">⋮</mi></mtd><mtd columnalign="center"><mi mathvariant="normal">⋱</mi></mtd><mtd columnalign="center"><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd columnalign="center"><mstyle displaystyle="false"><mfrac><mn>1</mn><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mstyle></mtd><mtd columnalign="center"><mi mathvariant="normal">⋯</mi></mtd><mtd columnalign="center"><mstyle displaystyle="false"><mfrac><mn>1</mn><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow><mo>+</mo><mn>1</mn></mrow></mfrac></mstyle></mtd></mtr></mtable><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><msubsup><mi>a</mi><mn>0</mn><mn>1</mn></msubsup></mtd></mtr><mtr><mtd columnalign="center"><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd columnalign="center"><msubsup><mi>a</mi><mn>0</mn><mi>n</mi></msubsup></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo>=</mo><mpadded width="+2.8pt"><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mrow><mstyle displaystyle="false"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow></mtd></mtr><mtr><mtd columnalign="center"><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd columnalign="center"><mrow><mstyle displaystyle="false"><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><msup><mi>t</mi><mi>n</mi></msup><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mpadded></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S4.SS0.SSS1.p4" class="ltx_para">
+<p class="ltx_p"><math id="S4.SS0.SSS1.p4.m1" class="ltx_Math" alttext="Remark-" display="inline"><mrow><mrow><mi>R</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>k</mi></mrow><mo>-</mo></mrow></math> Instead of polynomials we could approximate <math id="S4.SS0.SSS1.p4.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> by any other  of functions using the same procedure.</p>
+</div>
+</section>
+<section id="S4.SS0.SSS2" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">4.0.2 </span> - Best Fitting Lines :</h3>
+
+<div id="S4.SS0.SSS2.p1" class="ltx_para">
+<p class="ltx_p">Suppose we want to find the line that best fits some given points <math id="S4.SS0.SSS2.p1.m1" class="ltx_Math" alttext="(t_{1},y_{1}),\dots,(t_{n},y_{n})" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mi>n</mi></msub><mo>,</mo><msub><mi>y</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math>, i.e. the affine function <math id="S4.SS0.SSS2.p1.m2" class="ltx_Math" alttext="a_{0}(t)=\alpha t+\beta" display="inline"><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mi>t</mi></mrow><mo>+</mo><mi>β</mi></mrow></mrow></math> that minimizes <math id="S4.SS0.SSS2.p1.m3" class="ltx_Math" alttext="\displaystyle\sum_{k=1}^{n}|a_{0}(t_{k})-y_{k}|^{2}" display="inline"><mrow><mstyle displaystyle="true"><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msup><mrow><mo stretchy="false">|</mo><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>-</mo><msub><mi>y</mi><mi>k</mi></msub></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup></mrow></math>.</p>
+</div>
+<div id="S4.SS0.SSS2.p2" class="ltx_para">
+<p class="ltx_p">We are then led to consider the inner product</p>
+<table id="S4.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S4.Ex6.m1" class="ltx_Math" alttext="\langle f,g\rangle=\sum_{k=1}^{n}f(t_{k})g(t_{k})" display="block"><mrow><mrow><mo stretchy="false">⟨</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo stretchy="false">⟩</mo></mrow><mo>=</mo><mrow><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">in the space of functions <math id="S4.SS0.SSS2.p2.m1" class="ltx_Math" alttext="h:\{t_{1},\dots,t_{k}\}\longrightarrow\mathbb{R}" display="inline"><mrow><mi>h</mi><mo>:</mo><mrow><mrow><mo stretchy="false">{</mo><msub><mi>t</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>t</mi><mi>k</mi></msub><mo stretchy="false">}</mo></mrow><mo>⟶</mo><mi>ℝ</mi></mrow></mrow></math>.</p>
+</div>
+<div id="S4.SS0.SSS2.p3" class="ltx_para">
+<p class="ltx_p">With this setting we are then looking for the best approximation of the function <math id="S4.SS0.SSS2.p3.m1" class="ltx_Math" alttext="f(t_{k})=y_{k}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>y</mi><mi>k</mi></msub></mrow></math> on the subspace of affine functions.</p>
+</div>
+<div id="S4.SS0.SSS2.p4" class="ltx_para">
+<p class="ltx_p">A base for the subspace of affine functions is given by the functions <math id="S4.SS0.SSS2.p4.m1" class="ltx_Math" alttext="v_{1}(t)=1" display="inline"><mrow><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math> and <math id="S4.SS0.SSS2.p4.m2" class="ltx_Math" alttext="v_{2}(t)=t" display="inline"><mrow><mrow><msub><mi>v</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>t</mi></mrow></math>.</p>
+</div>
+<div id="S4.SS0.SSS2.p5" class="ltx_para">
+<p class="ltx_p">The best approximation of <math id="S4.SS0.SSS2.p5.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> on this space is the function <math id="S4.SS0.SSS2.p5.m2" class="ltx_Math" alttext="a_{0}(t)=\beta+\alpha t" display="inline"><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>β</mi><mo>+</mo><mrow><mi>α</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></math>, where the coefficients <math id="S4.SS0.SSS2.p5.m3" class="ltx_Math" alttext="\beta,\alpha" display="inline"><mrow><mi>β</mi><mo>,</mo><mi>α</mi></mrow></math> are the solutions of the system</p>
+<table id="S4.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S4.Ex7.m1" class="ltx_Math" alttext="\begin{pmatrix}n&amp;\sum_{k=1}^{n}t_{k}\\
+\sum_{k=1}^{n}t_{k}&amp;\sum_{k=1}^{n}t_{k}^{2}\end{pmatrix}\begin{pmatrix}\beta\\
+\alpha\end{pmatrix}=\begin{pmatrix}\sum_{k=1}^{n}y_{k}\\
+\sum_{k=1}^{n}y_{k}t_{k}\end{pmatrix}\;." display="block"><mrow><mrow><mrow><mrow><mo>(</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mi>n</mi></mtd><mtd columnalign="center"><mrow><mstyle displaystyle="false"><msubsup><mo largeop="true" symmetric="true">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup></mstyle><msub><mi>t</mi><mi>k</mi></msub></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mstyle displaystyle="false"><msubsup><mo largeop="true" symmetric="true">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup></mstyle><msub><mi>t</mi><mi>k</mi></msub></mrow></mtd><mtd columnalign="center"><mrow><mstyle displaystyle="false"><msubsup><mo largeop="true" symmetric="true">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup></mstyle><msubsup><mi>t</mi><mi>k</mi><mn>2</mn></msubsup></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mi>β</mi></mtd></mtr><mtr><mtd columnalign="center"><mi>α</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo>=</mo><mpadded width="+2.8pt"><mrow><mo>(</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="center"><mrow><mstyle displaystyle="false"><msubsup><mo largeop="true" symmetric="true">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup></mstyle><msub><mi>y</mi><mi>k</mi></msub></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mstyle displaystyle="false"><msubsup><mo largeop="true" symmetric="true">∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup></mstyle><mrow><msub><mi>y</mi><mi>k</mi></msub><mo>⁢</mo><msub><mi>t</mi><mi>k</mi></msub></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mpadded></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S4.SS0.SSS2.p6" class="ltx_para">
+<p class="ltx_p">Thus, the function <math id="S4.SS0.SSS2.p6.m1" class="ltx_Math" alttext="a_{0}(t)=\beta+\alpha t" display="inline"><mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>β</mi><mo>+</mo><mrow><mi>α</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></math> obtained by the above procedure provides the line that best fits the data <math id="S4.SS0.SSS2.p6.m2" class="ltx_Math" alttext="(t_{1},y_{1}),\dots,(t_{n},y_{n})" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mi>n</mi></msub><mo>,</mo><msub><mi>y</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math>.
+</p>
+<table class="ltx_tabular ltx_align_right ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">best approximation in inner product spaces</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">BestApproximationInInnerProductSpaces</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:32:16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 17:32:16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">asteroid (17536)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">asteroid (17536)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">12</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">asteroid (17536)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Feature</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 41A65</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 46C05</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 46N10</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 49J27</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 41A52</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 41A50</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_r">approximation by polynomials</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">best fitting lines</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:28:08 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>
